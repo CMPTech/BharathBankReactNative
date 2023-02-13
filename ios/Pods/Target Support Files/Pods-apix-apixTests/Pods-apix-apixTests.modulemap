@@ -1,0 +1,6 @@
+module Pods_apix_apixTests {
+  umbrella header "Pods-apix-apixTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

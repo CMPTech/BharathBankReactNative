@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*******************************************************************************
+  ~  *   ** All rights reserved.  No part of this work may be reproduced, stored in a retrieval system,
+  ~  *   ** adopted or transmitted in any form or by any means, electronic, mechanical, photographic,
+  ~  *   ** graphic, optic recording or otherwise, translated in any language or computer language, without
+  ~  *   ** the prior written permission of Techurate Systems Pvt Ltd
+  ~  *   ** Techurate Systems Pvt Ltd
+  ~  *   ** 227, 5th Main Rd, Indira Nagar II Stage,
+  ~  *   **  Indiranagar, Bengaluru,
+  ~  *   ** Karnataka 560038, India
+  ~  *   ** Author Sathish kumar C
+  ~  *   ** Copyright (c) 2016 Techurate Systems Pvt Ltd .
+  ~  *******************************************************************************/
+  -->
+
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
