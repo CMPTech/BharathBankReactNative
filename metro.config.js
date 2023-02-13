@@ -1,5 +1,5 @@
 /**
- * Metro configuration for React Native
+ * Metro configuration for React Native Native
  * https://github.com/facebook/react-native
  *
  * @format
