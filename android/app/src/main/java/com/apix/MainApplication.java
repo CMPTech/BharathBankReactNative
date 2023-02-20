@@ -69,6 +69,8 @@ public class MainApplication extends Application implements ReactApplication{
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
 
+
+//------------------------------- Changed from here ---------------------------------------
     //Libraries integrated
     // 1.Root Detection.
     // 2.Malware Apps.
@@ -147,6 +149,7 @@ public class MainApplication extends Application implements ReactApplication{
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
+//--------------------------- Changed till here ---------------------------------
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like

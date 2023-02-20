@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!--  Permissions added for wifi state  -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -59,10 +61,16 @@
                  <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
             </intent-filter>
         </activity>
+
+
+        <!--  Activity mentioned in the manifest -->
         <activity android:name=".NetworkTypeActivity" />
         <activity
             android:name=".NetworkType"
             android:launchMode="singleTask" />
+        <!-- Till here -->
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />
