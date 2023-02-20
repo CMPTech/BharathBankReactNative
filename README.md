@@ -10,3 +10,11 @@ Changes in Manifest file:
 
 Changes in build.gradle(module):
 1) Dependencies for the libraries added along with other dependencies. 
+
+Repositories added: 
+implementation 'com.github.CMPTech:RootCheckerLib:1.3'
+implementation 'com.github.CMPTech:RemoteAppsLib:1'
+implementation 'com.github.CMPTech:DeviceDetails:1.2'
+implementation 'com.github.CMPTech:AppchecksumLib:1.5'
+implementation 'androidx.appcompat:appcompat:1.6.1'
+implementation 'com.google.android.material:material:1.8.0'
