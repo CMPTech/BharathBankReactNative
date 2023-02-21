@@ -14,16 +14,13 @@ public class NetworkType extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         startActivity(new Intent(this, NetworkTypeActivity.class));
-        Log.d("----------","The value of data");
-
     }
 
-    private void goToMain() {
+    public void goToMain() {
             startActivity(new Intent(this, MainActivity.class));
     }
     public void onActivityResult(int requestCode, int resultCode, String data) throws URISyntaxException {
         super.onActivityResult(requestCode, resultCode, Intent.getIntentOld(data));
-        Log.d("----------","The value of data");
         if (requestCode == MY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 goToMain();

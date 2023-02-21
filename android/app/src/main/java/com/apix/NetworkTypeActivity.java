@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class NetworkTypeActivity extends AppCompatActivity {
@@ -36,10 +38,14 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        location();
+        try {
+            location();
+        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void location() {
+    private void location() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         LocationManager lm = (LocationManager) getSystemService(Context. LOCATION_SERVICE ) ;
         boolean gps_enabled;
         boolean network_enabled;
@@ -50,7 +56,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
     }
 
-    private void locationEnabled() {
+    private void locationEnabled(){
         LocationManager lm = (LocationManager)
                 getSystemService(Context. LOCATION_SERVICE ) ;
         boolean gps_enabled = false;
@@ -83,7 +89,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
     }
 
-    private void askAndStartScanWifi() {
+    private void askAndStartScanWifi(){
 //        locationEnabled();
         // With Android Level >= 23, you have to ask the user
         // for permission to Call.
@@ -108,7 +114,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         this.doStartScanWifi(this);
     }
 
-    private void doStartScanWifi(Context context) {
+    private void doStartScanWifi(Context context){
         this.wifiManager.startScan();
         this.wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
         WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
@@ -125,8 +131,6 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted
                     Log.d(LOG_TAG, "Permission Granted: " + permissions[0]);
-                    // Start Scan Wifi.
-                    doStartScanWifi(this);
                 } else {
 //                    Log.d(LOG_TAG, "Permission Denied: " + permissions[0]);
                 }
@@ -135,8 +139,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
     }
 
-    private void showNetworksDetails(String value) {
-
+    private void showNetworksDetails(String value){
         String value1 =value.replace("\"","");
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -152,16 +155,22 @@ public class NetworkTypeActivity extends AppCompatActivity {
         for (int i = 0; i < list.size(); i++){
             if (value1.equals(list.get(i).SSID)) {
                 Log.d("The SSID id :", list.get(i).SSID);
-                Toast.makeText(NetworkTypeActivity.this, "SSID:" + list.get(i).SSID, Toast.LENGTH_SHORT).show();
                 Log.d("The network Type is : ", list.get(i).capabilities);
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
-                    Intent intent = new Intent(this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
+                    MainApplication.getInstance().Backtomain();
                     return;
                 }else{
-                    Toast.makeText(NetworkTypeActivity.this, "Please connect to the secured network before opening the app", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(NetworkTypeActivity.this, "Please connect to the secured network before opening the app", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                    builder.setMessage("This network is not secure. Please connect to secure network and Relaunch the app.");
+                    builder.setTitle("Alert !");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
+                        finish();
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                     return;
                 }
             }

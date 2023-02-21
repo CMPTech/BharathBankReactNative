@@ -1,0 +1,9 @@
+{
+  "PackageNames" : [
+    {"package" : "com.anydesk.anydeskandroid"},
+    {"package" : "com.zhiliaoapp.musically"},
+    {"package" : "com.fake_fingerprint_scanner.fake.fingerprint.scanner.fingerprint.scanner.lockscreen.forandroid.fingerprintscannerlockscreen"},
+    {"package" : "com.geospot.app"},
+    {"package": "com.miraps.recordcall"}
+  ]
+}

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
@@ -21,12 +22,26 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONException;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication{
-  private static final int MY_REQUEST_CODE = 123;
-  boolean Ntype;
+  private static String FILE_NAME = "package_list.json";
+  private static MainApplication instance;
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override
@@ -78,14 +93,16 @@ public class MainApplication extends Application implements ReactApplication{
     // 4.Blocking Screenshot and Screen recording.
     // 5.Network secured or not.
 
+    instance = this;
+
     // isRooted
     isRooted();
 
     //CheckMalwareApps
-    CheckMalwareApps();
+      CheckMalwareApps();
 
     //DeviceDetails
-    DeviceDetails();
+//    DeviceDetails();
 
     //validateChecksum
     validateChecksum();
@@ -125,13 +142,26 @@ public class MainApplication extends Application implements ReactApplication{
   }
 
   public  void  isRooted(){
-    boolean data = RootLib.INSTANCE.findBinary("su");
-    Log.d("The device is rooted","Rooted:"+data);
+    Librarycheck act = new Librarycheck();
+    Context context =getBaseContext();
+    act.rootCheck(context);
   }
 
   public void CheckMalwareApps(){
-    boolean isPackageInstaled = checkRemoteApps.INSTANCE.isPackagesInstalled("com.anydesk.anydeskandroid", this.getPackageManager());
-    Log.d("Is com.anydesk.anydeskandroid installed ---------- ","Background"+ isPackageInstaled);
+    String packages = "";
+    try {
+      JSONObject jsonRootObject = new JSONObject(loadJSONFromAsset());
+      JSONArray jsonArray = jsonRootObject.optJSONArray("PackageNames");
+      for (int i = 0; i < jsonArray.length(); i++) {
+        JSONObject jsonObject = jsonArray.getJSONObject(i);
+        packages = jsonObject.optString("package");
+        boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(packages, this.getPackageManager());
+        Log.d("Is com.anydesk.anydeskandroid installed ---------- ","Background"+ isPackageInstalled);
+      }
+    }
+    catch (JSONException e) {
+      e.printStackTrace();
+    }
   }
 
   public  void validateChecksum(){
@@ -146,6 +176,32 @@ public class MainApplication extends Application implements ReactApplication{
 
   public void Network() {
     Intent intent = new Intent(this, NetworkType.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+  }
+
+  public static MainApplication getInstance() {
+    return instance;
+  }
+
+  public String loadJSONFromAsset() {
+    String json = null;
+    try {
+      InputStream is = getAssets().open("package_list.json");
+      int size = is.available();
+      byte[] buffer = new byte[size];
+      is.read(buffer);
+      is.close();
+      json = new String(buffer, StandardCharsets.UTF_8);
+    } catch (IOException ex) {
+      ex.printStackTrace();
+      return null;
+    }
+    return json;
+  }
+
+  public void Backtomain(){
+    Intent intent = new Intent(MainApplication.this, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }
