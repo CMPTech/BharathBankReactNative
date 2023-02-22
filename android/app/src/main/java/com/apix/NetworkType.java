@@ -2,7 +2,6 @@ package com.apix;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +18,7 @@ public class NetworkType extends AppCompatActivity {
     public void goToMain() {
             startActivity(new Intent(this, MainActivity.class));
     }
+
     public void onActivityResult(int requestCode, int resultCode, String data) throws URISyntaxException {
         super.onActivityResult(requestCode, resultCode, Intent.getIntentOld(data));
         if (requestCode == MY_REQUEST_CODE) {

@@ -1,8 +1,10 @@
 package com.apix;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -99,7 +101,7 @@ public class MainApplication extends Application implements ReactApplication{
     isRooted();
 
     //CheckMalwareApps
-      CheckMalwareApps();
+    CheckMalwareApps();
 
     //DeviceDetails
 //    DeviceDetails();
@@ -149,6 +151,8 @@ public class MainApplication extends Application implements ReactApplication{
 
   public void CheckMalwareApps(){
     String packages = "";
+    Librarycheck data = new Librarycheck();
+    Context context = getBaseContext();
     try {
       JSONObject jsonRootObject = new JSONObject(loadJSONFromAsset());
       JSONArray jsonArray = jsonRootObject.optJSONArray("PackageNames");
@@ -156,6 +160,7 @@ public class MainApplication extends Application implements ReactApplication{
         JSONObject jsonObject = jsonArray.getJSONObject(i);
         packages = jsonObject.optString("package");
         boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(packages, this.getPackageManager());
+        data.malwareApps(isPackageInstalled,context);
         Log.d("Is com.anydesk.anydeskandroid installed ---------- ","Background"+ isPackageInstalled);
       }
     }
@@ -165,8 +170,9 @@ public class MainApplication extends Application implements ReactApplication{
   }
 
   public  void validateChecksum(){
-    boolean checksum = Checksumlib.INSTANCE.primary(this);
-    Log.d("Checksum - ", String.valueOf(checksum));
+    Librarycheck data = new Librarycheck();
+    Context context =getBaseContext();
+    data.checksum(context);
   }
 
   public void DeviceDetails(){
@@ -204,6 +210,19 @@ public class MainApplication extends Application implements ReactApplication{
     Intent intent = new Intent(MainApplication.this, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
+  }
+
+  public void Alert(){
+    Context context =getBaseContext();
+    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+    builder.setMessage("This network is not secure. Please connect to secure network and Relaunch the app.");
+    builder.setTitle("Alert !");
+    builder.setCancelable(false);
+    builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
+      android.os.Process.killProcess(android.os.Process.myPid());
+    });
+    AlertDialog alertDialog = builder.create();
+    alertDialog.show();
   }
 //--------------------------- Changed till here ---------------------------------
 
