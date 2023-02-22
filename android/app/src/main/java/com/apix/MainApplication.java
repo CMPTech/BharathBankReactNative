@@ -144,14 +144,14 @@ public class MainApplication extends Application implements ReactApplication{
   }
 
   public  void  isRooted(){
-    Librarycheck act = new Librarycheck();
+    LibraryCheck act = new LibraryCheck();
     Context context =getBaseContext();
     act.rootCheck(context);
   }
 
   public void CheckMalwareApps(){
     String packages = "";
-    Librarycheck data = new Librarycheck();
+    LibraryCheck data = new LibraryCheck();
     Context context = getBaseContext();
     try {
       JSONObject jsonRootObject = new JSONObject(loadJSONFromAsset());
@@ -170,7 +170,7 @@ public class MainApplication extends Application implements ReactApplication{
   }
 
   public  void validateChecksum(){
-    Librarycheck data = new Librarycheck();
+    LibraryCheck data = new LibraryCheck();
     Context context =getBaseContext();
     data.checksum(context);
   }
@@ -210,19 +210,6 @@ public class MainApplication extends Application implements ReactApplication{
     Intent intent = new Intent(MainApplication.this, MainActivity.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
-  }
-
-  public void Alert(){
-    Context context =getBaseContext();
-    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-    builder.setMessage("This network is not secure. Please connect to secure network and Relaunch the app.");
-    builder.setTitle("Alert !");
-    builder.setCancelable(false);
-    builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
-      android.os.Process.killProcess(android.os.Process.myPid());
-    });
-    AlertDialog alertDialog = builder.create();
-    alertDialog.show();
   }
 //--------------------------- Changed till here ---------------------------------
 

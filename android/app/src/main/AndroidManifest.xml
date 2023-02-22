@@ -68,7 +68,7 @@
 
         <!--  Activity mentioned in the manifest -->
         <activity android:name=".NetworkTypeActivity" />
-        <activity android:name=".Librarycheck" />
+        <activity android:name=".LibraryCheck" />
         <activity
             android:name=".NetworkType"
             android:launchMode="singleTask" />
