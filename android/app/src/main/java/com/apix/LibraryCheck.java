@@ -20,7 +20,7 @@ public class LibraryCheck extends AppCompatActivity {
 
     public void rootCheck(Context context) {
         boolean udata= RootLib.INSTANCE.findBinary("su");
-        if(udata){
+        if(!udata){
             Log.d("App close","App close======");
             Toast.makeText(context, "Device is rooted ", Toast.LENGTH_LONG).show();
             // Use for finish the app
