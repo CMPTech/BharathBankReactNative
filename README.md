@@ -6,7 +6,7 @@ Changes in MainApplication.java:
 
 Changes in Manifest file:
 1) Permissions for accessing WIFI state is added.
-2) 3 java classes/Activity is mentioned in the Manifest file as activity.
+2) 3 java classes/Activity is mentioned in the Manifest file as activity.  
 
 Changes in build.gradle(module):
 1) Dependencies for the libraries is added.
