@@ -1,21 +1,15 @@
 package com.apix;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Application;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
 
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
 import com.example.checkremoteappslib.checkRemoteApps;
-import com.example.checksumlib.Checksumlib;
-import com.example.devicedetails.DeviceDetails;
-import com.example.rootcheckerlib.RootLib;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -25,20 +19,13 @@ import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 
 import org.json.JSONArray;
-import org.json.JSONObject;
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
-import java.util.Iterator;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication{
@@ -102,9 +89,6 @@ public class MainApplication extends Application implements ReactApplication{
 
     //CheckMalwareApps
     CheckMalwareApps();
-
-    //DeviceDetails
-//    DeviceDetails();
 
     //validateChecksum
     validateChecksum();
@@ -173,11 +157,6 @@ public class MainApplication extends Application implements ReactApplication{
     LibraryCheck data = new LibraryCheck();
     Context context =getBaseContext();
     data.checksum(context);
-  }
-
-  public void DeviceDetails(){
-    String details = DeviceDetails.INSTANCE.getDeviceId(this);
-    Log.d("Device Details - ",details);
   }
 
   public void Network() {

@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="26"
+        android:minSdkVersion="23"
         android:targetSdkVersion="33" />
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -52,7 +52,6 @@
         (NOT to keep screen awake)
     -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Required by older versions of Google Play services to create IID tokens -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -72,6 +71,7 @@
         android:name="com.apix.MainApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:debuggable="true"
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
@@ -102,7 +102,7 @@
             </intent-filter>
         </activity> <!-- Activity mentioned in the manifest -->
         <activity android:name="com.apix.NetworkTypeActivity" />
-        <activity android:name="com.apix.Librarycheck" />
+        <activity android:name="com.apix.LibraryCheck" />
         <activity
             android:name="com.apix.NetworkType"
             android:launchMode="singleTask" /> <!-- Till here -->
