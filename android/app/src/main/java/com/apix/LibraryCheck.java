@@ -8,8 +8,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.checksumlib.Checksumlib;
 import com.example.rootcheckerlib.RootLib;
+
+import com.example.checksumlib.Checksumlib;
+
 
 public class LibraryCheck extends AppCompatActivity {
 

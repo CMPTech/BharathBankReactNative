@@ -34,11 +34,6 @@
         android:name="android.permission.ACCESS_FINE_LOCATION"
         tools:ignore="CoarseFineLocation" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-
-
-    <uses-sdk android:targetSdkVersion="33" android:minSdkVersion="23"
-        tools:overrideLibrary="com.example.devicedetails, com.example.rootcheckerlib, com.example.checkremoteappslib, com.example.checksumlib"/>
-
 <queries>
     <intent>
         <action android:name="android.intent.action.VIEW" />
