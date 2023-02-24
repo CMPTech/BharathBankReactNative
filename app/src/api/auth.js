@@ -46,19 +46,41 @@ const encryptAES = (text) => {
 }
 
 
-
+//---------------------------------------------------
 const getMetaDataApi = async () => {
-  const response = await http.post(
-    config.apiRoute.GET_META_DATA,
-    {
-      userName: 'SUPERADMIN',
+  // const response = await http.post(
+  //  config.apiRoute.GET_META_DATA,
+  //  {
+  //    userName: "SUPERADMIN",
+  //    requestId: "META_DATA",
+  //  },
+  //  {}
+  // );
+  let respData = {};
+  await fetch(config.apiRoute.GET_META_DATA, {
+    method: "POST",
+    body: {
+      userName: "SUPERADMIN",
       requestId: "META_DATA",
     },
-    {}
-  );
-  store.dispatch({ type: SET_META_DATA, payload: response.data });
-  return response.data;
+    sslPinning: {
+      certs: ["bharatbank"],
+    },
+  })
+    .then((response) => {
+      respData = response;
+      console.log(respData);
+    })
+    .catch((err) => {
+      respData = err;
+      console.log(respData);
+    });
+
+  store.dispatch({ type: SET_META_DATA, payload: respData });
+  return respData;
 };
+//----------------------------------------------------------------
+
 
 
 const getFaqDataApi = async () => {

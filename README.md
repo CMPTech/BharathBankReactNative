@@ -17,6 +17,13 @@ implementation 'com.github.CMPTech:RemoteAppsLib:1'
 implementation 'com.github.CMPTech:AppchecksumLib:1.7'
 implementation 'androidx.appcompat:appcompat:1.6.1'
 implementation 'com.google.android.material:material:1.8.0'
+--------------------------------------------------------------------------------------------------------------------------------
+
+Changes in api for ssl pinning 24/02/23
+1) Changed meta data api call to fetch for ssl pinning implementation
+   -> changes marked in auth.js file (line 49 to 82)
+   -> added ssl certificate in android > app > src > assets
+
 
 Changes is package_list.json file(in assets folder):
 1)The package object is changed to array of objects.
