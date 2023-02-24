@@ -11,6 +11,7 @@ import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
@@ -163,11 +164,13 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 }else{
 //                    Toast.makeText(NetworkTypeActivity.this, "Please connect to the secured network before opening the app", Toast.LENGTH_SHORT).show();
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("This network is not secure. Please connect to secure network and Relaunch the app.");
+                    builder.setMessage("Open Network detected. For Security reasons the app will not proceed.");
                     builder.setTitle("Alert !");
                     builder.setCancelable(false);
                     builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
                         finish();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+
                     });
                     AlertDialog alertDialog = builder.create();
                     alertDialog.show();

@@ -44,10 +44,6 @@
         "source": "com.apix.app-debug-44:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.apix.app-merged_res-43:/xml_data_extraction_rules.xml.flat",
-        "source": "com.apix.app-main-45:/xml/data_extraction_rules.xml"
-    },
-    {
         "merged": "com.apix.app-merged_res-43:/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "com.apix.app-debug-44:/mipmap-xxhdpi/ic_launcher_round.png"
     },

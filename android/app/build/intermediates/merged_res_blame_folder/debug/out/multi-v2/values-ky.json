@@ -4,7 +4,24 @@
             "outputFile": "com.apix.app-mergeDebugResources-41:/values-ky/values-ky.xml",
             "map": [
                 {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/b77f9d74bce290d5e60f393dd6852814/transformed/material-1.8.0/res/values-ky/values-ky.xml",
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/res/values-ky/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "153",
+                        "endOffsets": "348"
+                    },
+                    "to": {
+                        "startLines": "49",
+                        "startColumns": "4",
+                        "startOffsets": "4818",
+                        "endColumns": "157",
+                        "endOffsets": "4971"
+                    }
+                },
+                {
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/b77f9d74bce290d5e60f393dd6852814/transformed/material-1.8.0/res/values-ky/values-ky.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/f52c83540c2e7146658c7f21339a8365/transformed/appcompat-1.6.1/res/values-ky/values-ky.xml",
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/f52c83540c2e7146658c7f21339a8365/transformed/appcompat-1.6.1/res/values-ky/values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/res/values-ky/values.xml",
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/res/values-ky/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -57,24 +74,7 @@
                     }
                 },
                 {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/res/values-ky/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "153",
-                        "endOffsets": "348"
-                    },
-                    "to": {
-                        "startLines": "49",
-                        "startColumns": "4",
-                        "startOffsets": "4818",
-                        "endColumns": "157",
-                        "endOffsets": "4971"
-                    }
-                },
-                {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/434e0fa976a0077c277d137e6d81f41b/transformed/core-1.9.0/res/values-ky/values-ky.xml",
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/434e0fa976a0077c277d137e6d81f41b/transformed/core-1.9.0/res/values-ky/values-ky.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

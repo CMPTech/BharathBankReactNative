@@ -24,7 +24,7 @@ public class LibraryCheck extends AppCompatActivity {
         boolean udata= RootLib.INSTANCE.findBinary("su");
         if(udata){
             Log.d("App close","App close======");
-            Toast.makeText(context, "Device is rooted ", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Your device is rooted. The app will not start on a rooted device.", Toast.LENGTH_LONG).show();
             // Use for finish the app
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -41,7 +41,7 @@ public class LibraryCheck extends AppCompatActivity {
         Log.d("Checksum - ", String.valueOf(checksum));
         if(!checksum){
             Log.d("App close","App close======");
-            Toast.makeText(context, "The app is modified please download original from play store", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "App checksum did not match. Please uninstall and install it again from the Google Play Store.", Toast.LENGTH_LONG).show();
             // Use for finish the app
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -53,10 +53,10 @@ public class LibraryCheck extends AppCompatActivity {
         }
     }
 
-    public void malwareApps(boolean value,Context context){
+    public void malwareApps(boolean value,Context context, String appname){
         if(value){
             Log.d("App close","App close======");
-            Toast.makeText(context, "Malware apps detected please uninstall before opening the app", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "Please uninstall " + appname + " before opening the app again.", Toast.LENGTH_LONG).show();
             // Use for finish the app
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {

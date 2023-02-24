@@ -1,9 +1,9 @@
 {
   "PackageNames" : [
-    {"package" : "com.anydesk.anydeskandroid"},
-    {"package" : "com.zhiliaoapp.musically"},
-    {"package" : "com.fake_fingerprint_scanner.fake.fingerprint.scanner.fingerprint.scanner.lockscreen.forandroid.fingerprintscannerlockscreen"},
-    {"package" : "com.geospot.app"},
-    {"package": "com.miraps.recordcall"}
+    {"package" : [{"name" : "AnyDesk" , "pname" : "com.anydesk.anydeskandroid" }]},
+    {"package" : [{"name" : "TicTok" , "pname" : "com.zhiliaoapp.musically"}]},
+    {"package" : [{"name" : "Fingerprint scanner" , "pname" : "com.fake_fingerprint_scanner.fake.fingerprint.scanner.fingerprint.scanner.lockscreen.forandroid.fingerprintscannerlockscreen"}]},
+    {"package" : [{"name" : "GeoSpot", "pname" : "com.geospot.app"}]},
+    {"package": [{"name" : "Call Recorder" , "pname" : "com.miraps.recordcall"}]}
   ]
 }

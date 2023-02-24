@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication{
@@ -134,7 +135,6 @@ public class MainApplication extends Application implements ReactApplication{
   }
 
   public void CheckMalwareApps(){
-    String packages = "";
     LibraryCheck data = new LibraryCheck();
     Context context = getBaseContext();
     try {
@@ -142,10 +142,14 @@ public class MainApplication extends Application implements ReactApplication{
       JSONArray jsonArray = jsonRootObject.optJSONArray("PackageNames");
       for (int i = 0; i < jsonArray.length(); i++) {
         JSONObject jsonObject = jsonArray.getJSONObject(i);
-        packages = jsonObject.optString("package");
-        boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(packages, this.getPackageManager());
-        data.malwareApps(isPackageInstalled,context);
-        Log.d("Is com.anydesk.anydeskandroid installed ---------- ","Background"+ isPackageInstalled);
+        JSONArray ingArray = jsonObject.getJSONArray("package");
+        for(int j=0;j<ingArray.length();j++){
+          JSONObject ingredObject= ingArray.getJSONObject(j);
+          String ingName = ingredObject.getString("name");
+          String pname = ingredObject.getString("pname");
+          boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(pname, this.getPackageManager());
+          data.malwareApps(isPackageInstalled,context,ingName);
+        }
       }
     }
     catch (JSONException e) {

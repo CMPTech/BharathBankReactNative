@@ -4,7 +4,7 @@
             "outputFile": "com.apix.app-mergeDebugResources-41:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/vijeth/.gradle/caches/transforms-3/f52c83540c2e7146658c7f21339a8365/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/home/cloudmpower/.gradle/caches/transforms-3/f52c83540c2e7146658c7f21339a8365/transformed/appcompat-1.6.1/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

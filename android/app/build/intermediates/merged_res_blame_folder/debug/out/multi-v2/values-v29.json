@@ -4,7 +4,7 @@
             "outputFile": "com.apix.app-mergeDebugResources-41:/values-v29/values-v29.xml",
             "map": [
                 {
-                    "source": "/home/vijeth/BharathBank/BharathBankReactNative/android/app/src/main/res/values-v29/styles.xml",
+                    "source": "/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/res/values-v29/styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
