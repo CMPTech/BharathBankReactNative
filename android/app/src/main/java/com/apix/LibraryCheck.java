@@ -41,7 +41,7 @@ public class LibraryCheck extends AppCompatActivity {
         Log.d("Checksum - ", String.valueOf(checksum));
         if(!checksum){
             Log.d("App close","App close======");
-            Toast.makeText(context, "App checksum did not match. Please uninstall and install it again from the Google Play Store.", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "App checksum did not match. Please uninstall and install it again from the Google PlayStore.", Toast.LENGTH_LONG).show();
             // Use for finish the app
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
