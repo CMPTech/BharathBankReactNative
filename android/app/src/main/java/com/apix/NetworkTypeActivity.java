@@ -162,7 +162,6 @@ public class NetworkTypeActivity extends AppCompatActivity {
                     MainApplication.getInstance().Backtomain();
                     return;
                 }else{
-//                    Toast.makeText(NetworkTypeActivity.this, "Please connect to the secured network before opening the app", Toast.LENGTH_SHORT).show();
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage("Open Network detected. For Security reasons the app will not proceed.");
                     builder.setTitle("Alert !");

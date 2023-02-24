@@ -18,14 +18,16 @@ implementation 'com.github.CMPTech:AppchecksumLib:1.7'
 implementation 'androidx.appcompat:appcompat:1.6.1'
 implementation 'com.google.android.material:material:1.8.0'
 --------------------------------------------------------------------------------------------------------------------------------
+24/02/23
 
-Changes in api for ssl pinning 24/02/23
+Changes in api for ssl pinning 
+
 1) Changed meta data api call to fetch for ssl pinning implementation
    -> changes marked in auth.js file (line 49 to 82)
    -> added ssl certificate in android > app > src > assets
 
 
-Changes is package_list.json file(in assets folder):
+Changes is package_list.json file(inside android folder -> app -> src -> main -> assets -> package_list.json):
 1)The package object is changed to array of objects.
 
 Changes in Librarycheck.java:
@@ -33,10 +35,10 @@ Changes in Librarycheck.java:
 2)In malwareapps() added extra parameter "appname"  to display the appname in toast.
 
 Changes in MainApplication.java in CheckMalwareApps():
-1)Reading JSON array of objects is changed.
+1)The entire JSON code funtionality is changed.(added extra for loop to access names);
 
 Changes in NetworkTypeActivity.java:
-1)Alert message is changed.
+1)Alert message is changed inside showNetworksDetails() in else part.(Line number 166).
 
 
 
