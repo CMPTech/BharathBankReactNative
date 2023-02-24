@@ -18,6 +18,18 @@ implementation 'com.github.CMPTech:AppchecksumLib:1.7'
 implementation 'androidx.appcompat:appcompat:1.6.1'
 implementation 'com.google.android.material:material:1.8.0'
 
+Changes is package_list.json file(in assets folder):
+1)The package object is changed to array of objects.
+
+Changes in Librarycheck.java:
+1)Toast messages changed.
+2)In malwareapps() added extra parameter "appname"  to display the appname in toast.
+
+Changes in MainApplication.java in CheckMalwareApps():
+1)Reading JSON array of objects is changed.
+
+Changes in NetworkTypeActivity.java:
+1)Alert message is changed.
 
 
 
