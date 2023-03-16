@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
+
+import androidx.core.app.ActivityCompat;
 
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
 import com.example.checkremoteappslib.checkRemoteApps;
@@ -29,33 +33,33 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication{
+public class MainApplication extends Application implements ReactApplication {
   private static String FILE_NAME = "package_list.json";
   private static MainApplication instance;
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
-        @Override
-        public boolean getUseDeveloperSupport() {
-          return BuildConfig.DEBUG;
-        }
+          new ReactNativeHost(this) {
+            @Override
+            public boolean getUseDeveloperSupport() {
+              return BuildConfig.DEBUG;
+            }
 
-        @Override
-        protected List<ReactPackage> getPackages() {
-          @SuppressWarnings("UnnecessaryLocalVariable")
-          List<ReactPackage> packages = new PackageList(this).getPackages();
-          // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
-          return packages;
-        }
+            @Override
+            protected List<ReactPackage> getPackages() {
+              @SuppressWarnings("UnnecessaryLocalVariable")
+              List<ReactPackage> packages = new PackageList(this).getPackages();
+              // Packages that cannot be autolinked yet can be added manually here, for example:
+              // packages.add(new MyReactNativePackage());
+              return packages;
+            }
 
-        @Override
-        protected String getJSMainModuleName() {
-          return "index";
-        }
-      };
+            @Override
+            protected String getJSMainModuleName() {
+              return "index";
+            }
+          };
 
   private final ReactNativeHost mNewArchitectureNativeHost =
-      new MainApplicationReactNativeHost(this);
+          new MainApplicationReactNativeHost(this);
 
   @Override
   public ReactNativeHost getReactNativeHost() {
@@ -85,21 +89,14 @@ public class MainApplication extends Application implements ReactApplication{
 
     instance = this;
 
-    // isRooted
-    isRooted();
-
-    //CheckMalwareApps
-    CheckMalwareApps();
-
-    //validateChecksum
-    validateChecksum();
-
     //BlockScreenshots
     setupActivityListener();
 
-    //isNetworkOpen
-    Network();
+    //mainFn call
+    mainFn();
   }
+
+
   private void setupActivityListener() {
     registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
       @Override
@@ -126,6 +123,13 @@ public class MainApplication extends Application implements ReactApplication{
       public void onActivityDestroyed(Activity activity) {
       }
     });
+  }
+
+  public void mainFn(){
+    isRooted();
+    CheckMalwareApps();
+    validateChecksum();
+    Network();
   }
 
   public  void  isRooted(){
@@ -191,6 +195,13 @@ public class MainApplication extends Application implements ReactApplication{
 
   public void Backtomain(){
     Intent intent = new Intent(MainApplication.this, MainActivity.class);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
+    Log.d("","Log inside backtomainfn");
+  }
+
+  public void deviceBinding(){
+    Intent intent = new Intent(this, DeviceBinding.class);
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     startActivity(intent);
   }

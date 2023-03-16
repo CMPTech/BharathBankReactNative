@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.apix.app-mergeDebugResources-41:/values-de/values-de.xml",
+            "outputFile": "com.apix.app-mergeDebugResources-42:/values-de/values-de.xml",
             "map": [
                 {
                     "source": "/home/cloudmpower/.gradle/caches/transforms-3/3922b5abd4cd956bb75a17883fd29de0/transformed/jetified-ucrop-2.2.6-native/res/values-de/values-de.xml",

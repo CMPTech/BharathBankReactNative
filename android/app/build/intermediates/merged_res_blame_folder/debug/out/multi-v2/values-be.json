@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.apix.app-mergeDebugResources-41:/values-be/values-be.xml",
+            "outputFile": "com.apix.app-mergeDebugResources-42:/values-be/values-be.xml",
             "map": [
                 {
                     "source": "/home/cloudmpower/.gradle/caches/transforms-3/f52c83540c2e7146658c7f21339a8365/transformed/appcompat-1.6.1/res/values-be/values-be.xml",

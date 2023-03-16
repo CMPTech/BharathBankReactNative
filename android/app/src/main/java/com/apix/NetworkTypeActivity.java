@@ -1,5 +1,7 @@
 package com.apix;
 
+import static android.content.ContentValues.TAG;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -13,6 +15,7 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -62,16 +65,24 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 getSystemService(Context. LOCATION_SERVICE ) ;
         boolean gps_enabled = false;
         boolean network_enabled = false;
+        boolean network = checkMobileDataIsEnabled(this);
         try {
-            gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER ) ;
+            gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER );
         } catch (Exception e) {
             e.printStackTrace() ;
         }
         try {
-            network_enabled = lm.isProviderEnabled(LocationManager. NETWORK_PROVIDER ) ;
+            network_enabled = lm.isProviderEnabled(LocationManager. NETWORK_PROVIDER );
+            Log.d("","network enabled" +network_enabled);
         } catch (Exception e) {
             e.printStackTrace() ;
         }
+
+        if(network){
+            MainApplication.getInstance().deviceBinding();
+            return;
+        }
+
         if(gps_enabled && network_enabled){
             askAndStartScanWifi();
         }
@@ -159,7 +170,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 Log.d("The network Type is : ", list.get(i).capabilities);
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
-                    MainApplication.getInstance().Backtomain();
+                    MainApplication.getInstance().deviceBinding();
                     return;
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -177,5 +188,21 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    private boolean checkMobileDataIsEnabled(Context context){
+        boolean mobileYN = false;
+
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (tm.getSimState() == TelephonyManager.SIM_STATE_READY) {
+            int dataState = tm.getDataState();
+            Log.v(TAG,"tm.getDataState() : "+ dataState);
+            if(dataState != TelephonyManager.DATA_DISCONNECTED){
+                mobileYN = true;
+            }
+
+        }
+
+        return mobileYN;
     }
 }

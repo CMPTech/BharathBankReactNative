@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.apix.app-mergeDebugResources-41:/values-hr/values-hr.xml",
+            "outputFile": "com.apix.app-mergeDebugResources-42:/values-hr/values-hr.xml",
             "map": [
                 {
                     "source": "/home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/res/values-hr/values.xml",

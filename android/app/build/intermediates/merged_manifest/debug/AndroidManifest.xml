@@ -20,8 +20,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -102,9 +105,19 @@
         </activity> <!-- Activity mentioned in the manifest -->
         <activity android:name="com.apix.NetworkTypeActivity" />
         <activity android:name="com.apix.LibraryCheck" />
+        <activity android:name="com.apix.DeviceBinding" />
         <activity
             android:name="com.apix.NetworkType"
-            android:launchMode="singleTask" /> <!-- Till here -->
+            android:launchMode="singleTask" />
+
+        <receiver
+            android:name="com.apix.Models.MySMSBroadcastReceiver"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.phone.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
+            </intent-filter>
+        </receiver> <!-- Till here -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />
@@ -141,6 +154,21 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
+
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.bcb.androidx-startup"

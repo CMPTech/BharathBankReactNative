@@ -3047,6 +3047,7 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
+id button_id
 id cancel_action
 id cancel_button
 id catalyst_redbox_title
@@ -3111,6 +3112,7 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id edittext_id
 id elastic
 id embed
 id end
@@ -3412,6 +3414,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id text_input_edit_text1
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3582,6 +3585,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_main
 layout amu_info_window
 layout amu_text_bubble
 layout amu_webview
@@ -3801,6 +3805,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string enter_your_phone_number
 string error_a11y_label
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -3924,6 +3929,7 @@ string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
+string send_token
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string spinbutton_description
@@ -3935,6 +3941,7 @@ string state_off_description
 string state_on_description
 string state_unselected_description
 string status_bar_notification_info_overflow
+string submit
 string summary_description
 string tablist_description
 string timer_description
