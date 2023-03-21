@@ -4,13 +4,9 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
-
-import androidx.core.app.ActivityCompat;
 
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
 import com.example.checkremoteappslib.checkRemoteApps;
@@ -30,7 +26,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -126,21 +121,37 @@ public class MainApplication extends Application implements ReactApplication {
   }
 
   public void mainFn(){
-    isRooted();
-    CheckMalwareApps();
-    validateChecksum();
+
+    final boolean rooted = isRooted();
+    if(rooted){
+      return;
+    }
+
+    final boolean malware = CheckMalwareApps();
+    if(malware){
+      return;
+    }
+
+    final boolean checksum = validateChecksum();
+    if(!checksum){
+      return;
+    }
+
     Network();
+
   }
 
-  public  void  isRooted(){
+  public boolean isRooted(){
     LibraryCheck act = new LibraryCheck();
     Context context =getBaseContext();
-    act.rootCheck(context);
+    boolean val = act.rootCheck(context);
+    return val;
   }
 
-  public void CheckMalwareApps(){
+  public boolean CheckMalwareApps(){
     LibraryCheck data = new LibraryCheck();
     Context context = getBaseContext();
+    boolean val = false;
     try {
       JSONObject jsonRootObject = new JSONObject(loadJSONFromAsset());
       JSONArray jsonArray = jsonRootObject.optJSONArray("PackageNames");
@@ -152,19 +163,22 @@ public class MainApplication extends Application implements ReactApplication {
           String ingName = ingredObject.getString("name");
           String pname = ingredObject.getString("pname");
           boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(pname, this.getPackageManager());
-          data.malwareApps(isPackageInstalled,context,ingName);
+          val = data.malwareApps(isPackageInstalled,context,ingName);
+          return val;
         }
       }
     }
     catch (JSONException e) {
       e.printStackTrace();
     }
+    return val;
   }
 
-  public  void validateChecksum(){
+  public boolean validateChecksum(){
     LibraryCheck data = new LibraryCheck();
     Context context =getBaseContext();
-    data.checksum(context);
+    boolean val = data.checksum(context);
+    return val;
   }
 
   public void Network() {

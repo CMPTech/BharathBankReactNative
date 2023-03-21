@@ -8,9 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rootcheckerlib.RootLib;
-
 import com.example.checksumlib.Checksumlib;
+import com.example.rootcheckerlib.RootLib;
 
 
 public class LibraryCheck extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class LibraryCheck extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-    public void rootCheck(Context context) {
+    public boolean rootCheck(Context context) {
         boolean udata= RootLib.INSTANCE.findBinary("su");
         if(udata){
             Log.d("App close","App closed");
@@ -31,12 +30,15 @@ public class LibraryCheck extends AppCompatActivity {
                 @Override
                 public void run() {
                     android.os.Process.killProcess(android.os.Process.myPid());
+
                 }
             }, 5000);
+            return true;
         }
+        return false;
     }
 
-    public void checksum(Context context) {
+    public boolean checksum(Context context) {
         boolean checksum = Checksumlib.INSTANCE.primary(context);
         Log.d("Checksum - ", String.valueOf(checksum));
         if(!checksum){
@@ -50,10 +52,12 @@ public class LibraryCheck extends AppCompatActivity {
                     android.os.Process.killProcess(android.os.Process.myPid());
                 }
             }, 5000);
+            return true;
         }
+        return checksum;
     }
 
-    public void malwareApps(boolean value,Context context, String appname){
+    public boolean malwareApps(boolean value, Context context, String appname){
         if(value){
             Log.d("App close","App closed");
             Toast.makeText(context, "Please uninstall " + appname + " before opening the app again.", Toast.LENGTH_LONG).show();
@@ -65,6 +69,8 @@ public class LibraryCheck extends AppCompatActivity {
                     android.os.Process.killProcess(android.os.Process.myPid());
                 }
             }, 5000);
+            return value;
         }
+        return value;
     }
 }

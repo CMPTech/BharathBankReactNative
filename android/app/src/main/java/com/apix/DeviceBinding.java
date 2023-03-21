@@ -51,6 +51,8 @@ import com.google.android.gms.tasks.Task;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 
 import retrofit2.Call;
@@ -119,6 +121,13 @@ public class DeviceBinding extends AppCompatActivity {
                     sendMetadata();
                     fetchToken();
                 });
+
+        try {
+            String encrypted = generateHash(details);
+            Log.d("","encrypted" +encrypted);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -130,28 +139,24 @@ public class DeviceBinding extends AppCompatActivity {
     public void primaryFn(){
         final boolean isSimSupport = isSimSupport(this);
         if(!isSimSupport){
-            Alert("This device do not have sim. Please insert sim and then continue for Device Binding");
+//            Alert("This device do not have sim. Please insert sim and then continue for Device Binding");
             return;
         }
 
         final boolean isAirplaneModeOn = isAirplaneModeOn(this);
         Log.d("","airplane"+isAirplaneModeOn);
         if(isAirplaneModeOn){
-            Alert("Airplane mode is switched on. Please turn off and then continue for Device Binding");
+//            Alert("Airplane mode is switched on. Please turn off and then continue for Device Binding");
             return;
         }
 
         final boolean isOnline = isOnline(this);
         if(!isOnline){
-            Alert("The device network is turned off. Please turn on and then continue for Device Binding");
+//            Alert("The device network is turned off. Please turn on and then continue for Device Binding");
             return;
         }
 
         final Object versionInfo =  getVersionInfo(this);
-//        if(versionInfo == null){
-//            Alert("The version is invalid. Please install new version and then continue for Device Binding");
-//            return;
-//        }
     }
 
     private void askPermission() {
@@ -166,6 +171,24 @@ public class DeviceBinding extends AppCompatActivity {
             Log.d("", "permission already granted");
         }
         getDevice();
+    }
+
+    public static String generateHash(String message) throws NoSuchAlgorithmException {
+
+        MessageDigest digest = MessageDigest.getInstance("SHA-512");
+
+        byte[] hashedBytes = digest.digest(message.getBytes());
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < hashedBytes.length; i++) {
+
+            builder.append(Integer.toString((hashedBytes[i] & 0xff) + 0x100, 16).substring(1));
+
+        }
+
+        return builder.toString();
+
     }
 
     private void getDevice() {
@@ -447,7 +470,7 @@ public class DeviceBinding extends AppCompatActivity {
             @Override
             public void onFailure(Call<Version> call, Throwable t) {
                 Toast.makeText(DeviceBinding.this,"Error Occurred",Toast.LENGTH_SHORT).show();
-                Alert("The version is invalid. Please install new version and then continue for Device Binding");
+//                Alert("The version is invalid. Please install new version and then continue for Device Binding");
             }
         });
     }
@@ -501,7 +524,7 @@ public class DeviceBinding extends AppCompatActivity {
         });
     }
 
-    public void Alert(String message){
+    public void Alert(Context context , String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(DeviceBinding.this);
 
         // Set the message show for the Alert time
