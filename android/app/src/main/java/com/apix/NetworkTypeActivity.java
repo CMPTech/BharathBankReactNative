@@ -3,6 +3,7 @@ package com.apix;
 import static android.content.ContentValues.TAG;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,6 +18,8 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,9 +35,12 @@ public class NetworkTypeActivity extends AppCompatActivity {
     private static final int MY_REQUEST_CODE = 123;
     private WifiManager wifiManager;
     String NetworkType = "";
+    private TextView editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        editText = (TextView) findViewById(R.id.textView1);
         this.wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         locationEnabled();
     }
@@ -135,18 +141,26 @@ public class NetworkTypeActivity extends AppCompatActivity {
         showNetworksDetails(ssid);
     }
 
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    @SuppressLint("SetTextI18n")
+    public void onRequestPermissionsResult(int requestCode, String permissions[] , int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case MY_REQUEST_CODE: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted
-                    Log.d(LOG_TAG, "Permission Granted: " + permissions[0]);
-                } else {
-//                    Log.d(LOG_TAG, "Permission Denied: " + permissions[0]);
-                }
-                break;
+        for (int i = 0; i < permissions.length; i++) {
+            switch (requestCode) {
+                case MY_REQUEST_CODE:
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        // permission i granted
+                        Log.d(LOG_TAG, "Permission Granted: " + permissions[0]);
+                    } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
+                        // permission i denied
+//                        Log.d(LOG_TAG, "Permission Denied: ");
+//                        Alert("We need network permission to continue further. Please close the app and allow permissions and then relaunch the app to continue ");
+                        editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+                    } else {
+                        // permission i denied and don't ask for it again
+                    }
+                    break;
+                default:
+                    throw new RuntimeException("unhandled permissions request code: " + requestCode);
             }
         }
     }

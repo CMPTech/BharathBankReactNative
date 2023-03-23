@@ -139,20 +139,20 @@ public class DeviceBinding extends AppCompatActivity {
     public void primaryFn(){
         final boolean isSimSupport = isSimSupport(this);
         if(!isSimSupport){
-//            Alert("This device do not have sim. Please insert sim and then continue for Device Binding");
+            Alert("This device do not have sim. Please insert sim and then continue for Device Binding");
             return;
         }
 
         final boolean isAirplaneModeOn = isAirplaneModeOn(this);
         Log.d("","airplane"+isAirplaneModeOn);
         if(isAirplaneModeOn){
-//            Alert("Airplane mode is switched on. Please turn off and then continue for Device Binding");
+            Alert("Airplane mode is switched on. Please turn off and then continue for Device Binding");
             return;
         }
 
         final boolean isOnline = isOnline(this);
         if(!isOnline){
-//            Alert("The device network is turned off. Please turn on and then continue for Device Binding");
+            Alert("The device network is turned off. Please turn on and then continue for Device Binding");
             return;
         }
 
@@ -524,7 +524,7 @@ public class DeviceBinding extends AppCompatActivity {
         });
     }
 
-    public void Alert(Context context , String message){
+    public void Alert(String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(DeviceBinding.this);
 
         // Set the message show for the Alert time
