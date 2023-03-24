@@ -104,20 +104,16 @@
             </intent-filter>
         </activity> <!-- Activity mentioned in the manifest -->
         <activity android:name="com.apix.NetworkTypeActivity" />
-        <activity android:name="com.apix.LibraryCheck" />
-        <activity android:name="com.apix.DeviceBinding" />
+        <activity android:name="com.apix.LibraryCheck" /> <!-- <activity android:name=".DeviceBinding" /> -->
         <activity
             android:name="com.apix.NetworkType"
-            android:launchMode="singleTask" />
-
-        <receiver
-            android:name="com.apix.Models.MySMSBroadcastReceiver"
-            android:exported="true"
-            android:permission="com.google.android.gms.auth.api.phone.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
-            </intent-filter>
-        </receiver> <!-- Till here -->
+            android:launchMode="singleTask" /> <!-- <receiver android:name=".Models.MySMSBroadcastReceiver" android:exported="true" -->
+        <!-- android:permission="com.google.android.gms.auth.api.phone.permission.SEND"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- Till here -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />

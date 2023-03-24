@@ -77,17 +77,17 @@
         <!--  Activity mentioned in the manifest -->
         <activity android:name=".NetworkTypeActivity" />
         <activity android:name=".LibraryCheck" />
-        <activity android:name=".DeviceBinding" />
+<!--        <activity android:name=".DeviceBinding" />-->
         <activity
             android:name=".NetworkType"
             android:launchMode="singleTask" />
 
-        <receiver android:name=".Models.MySMSBroadcastReceiver" android:exported="true"
-            android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
-            </intent-filter>
-        </receiver>
+<!--        <receiver android:name=".Models.MySMSBroadcastReceiver" android:exported="true"-->
+<!--            android:permission="com.google.android.gms.auth.api.phone.permission.SEND">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
         <!-- Till here -->
 

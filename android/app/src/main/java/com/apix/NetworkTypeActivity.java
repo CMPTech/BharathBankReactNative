@@ -33,6 +33,8 @@ import java.util.List;
 public class NetworkTypeActivity extends AppCompatActivity {
     private static final String LOG_TAG = "AndroidExample";
     private static final int MY_REQUEST_CODE = 123;
+    private static final boolean USER_IS_GOING_TO_EXIT = true;
+    private Toast backtoast;
     private WifiManager wifiManager;
     String NetworkType = "";
     private TextView editText;
@@ -85,7 +87,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
 
         if(network){
-            MainApplication.getInstance().deviceBinding();
+            MainApplication.getInstance().Backtomain();
             return;
         }
 
@@ -155,8 +157,13 @@ public class NetworkTypeActivity extends AppCompatActivity {
 //                        Log.d(LOG_TAG, "Permission Denied: ");
 //                        Alert("We need network permission to continue further. Please close the app and allow permissions and then relaunch the app to continue ");
                         editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+//                        android.os.Process.killProcess(android.os.Process.myPid());
+//                        onBackPressed();
                     } else {
                         // permission i denied and don't ask for it again
+                        editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+//                        android.os.Process.killProcess(android.os.Process.myPid());
+//                        onBackPressed();
                     }
                     break;
                 default:
@@ -184,7 +191,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 Log.d("The network Type is : ", list.get(i).capabilities);
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
-                    MainApplication.getInstance().deviceBinding();
+                    MainApplication.getInstance().Backtomain();
                     return;
                 }else{
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -218,5 +225,10 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
 
         return mobileYN;
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 }

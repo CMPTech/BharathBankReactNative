@@ -213,12 +213,6 @@ public class MainApplication extends Application implements ReactApplication {
     startActivity(intent);
     Log.d("","Log inside backtomainfn");
   }
-
-  public void deviceBinding(){
-    Intent intent = new Intent(this, DeviceBinding.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    startActivity(intent);
-  }
 //--------------------------- Changed till here ---------------------------------
 
   /**
