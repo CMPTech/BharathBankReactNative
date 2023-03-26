@@ -48,6 +48,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
+        Toast.makeText(this,"Triggered from onResume function",Toast.LENGTH_LONG).show();
         locationEnabled();
     }
 
@@ -187,6 +188,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 Log.d("The network Type is : ", list.get(i).capabilities);
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
+                    Toast.makeText(this,"Triggered before loading react app.",Toast.LENGTH_LONG).show();
                     MainApplication.getInstance().Backtomain();
                     return;
                 }else{
