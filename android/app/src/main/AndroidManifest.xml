@@ -77,6 +77,7 @@
         <!--  Activity mentioned in the manifest -->
         <activity android:name=".NetworkTypeActivity" />
         <activity android:name=".LibraryCheck" />
+        <activity android:name=".permission" />
 <!--        <activity android:name=".DeviceBinding" />-->
         <activity
             android:name=".NetworkType"

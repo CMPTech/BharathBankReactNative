@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
-INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
-INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
-INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
-MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
+ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
+INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
+INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
+INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
+MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/cloudmpower/.gradle/caches/transforms-3/59171125da48a0f67fcec5e79f1f319f/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/cloudmpower/.gradle/caches/transforms-3/156a310a03d089724712d4fadcb95dac/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/cloudmpower/.gradle/caches/transforms-3/7f9a538873bc048d4dadd036617ec3e0/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
@@ -137,13 +137,13 @@ INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/a
 		INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/debug/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
 		INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/debug/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:2:5-51
 	android:versionCode
 		INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-99:12
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:1-100:12
 		INJECTED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -558,9 +558,9 @@ ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/
 	android:mimeType
 		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:48:15-37
 application
-ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-98:19
-MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-98:19
-MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-98:19
+ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-99:19
+MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-99:19
+MERGED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-99:19
 MERGED from [:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-31:19
 MERGED from [:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:5-31:19
 MERGED from [:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
@@ -679,18 +679,22 @@ activity#com.apix.LibraryCheck
 ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:9-50
 	android:name
 		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:19-47
+activity#com.apix.permission
+ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:9-48
+	android:name
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:19-45
 activity#com.apix.NetworkType
-ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:81:9-83:47
+ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:9-84:47
 	android:launchMode
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-44
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:84:13-44
 	android:name
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:13-40
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-40
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:95:9-97:71
+ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:9-98:71
 	android:value
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-68
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:98:13-68
 	android:name
-		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:13-58
+		ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-58
 activity#com.facebook.react.devsupport.DevSettingsActivity
 ADDED from /home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/debug/AndroidManifest.xml:11:9-111
 	android:exported

@@ -33,8 +33,6 @@ import java.util.List;
 public class NetworkTypeActivity extends AppCompatActivity {
     private static final String LOG_TAG = "AndroidExample";
     private static final int MY_REQUEST_CODE = 123;
-    private static final boolean USER_IS_GOING_TO_EXIT = true;
-    private Toast backtoast;
     private WifiManager wifiManager;
     String NetworkType = "";
     private TextView editText;
@@ -50,11 +48,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        try {
-            location();
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        locationEnabled();
     }
 
     private void location() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -91,8 +85,9 @@ public class NetworkTypeActivity extends AppCompatActivity {
             return;
         }
 
-        if(gps_enabled && network_enabled){
+        else if(gps_enabled && network_enabled){
             askAndStartScanWifi();
+            return;
         }
         else{
             new AlertDialog.Builder(this )
@@ -104,8 +99,14 @@ public class NetworkTypeActivity extends AppCompatActivity {
                                     startActivity( new Intent(Settings. ACTION_LOCATION_SOURCE_SETTINGS )) ;
                                 }
                             })
-                    .setNegativeButton( "Cancel" , null )
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+                        }
+                    })
                     .show() ;
+            return;
         }
     }
 
@@ -155,15 +156,10 @@ public class NetworkTypeActivity extends AppCompatActivity {
                     } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
                         // permission i denied
 //                        Log.d(LOG_TAG, "Permission Denied: ");
-//                        Alert("We need network permission to continue further. Please close the app and allow permissions and then relaunch the app to continue ");
                         editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
-//                        android.os.Process.killProcess(android.os.Process.myPid());
-//                        onBackPressed();
                     } else {
                         // permission i denied and don't ask for it again
                         editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
-//                        android.os.Process.killProcess(android.os.Process.myPid());
-//                        onBackPressed();
                     }
                     break;
                 default:

@@ -52,7 +52,7 @@ public class LibraryCheck extends AppCompatActivity {
                     android.os.Process.killProcess(android.os.Process.myPid());
                 }
             }, 5000);
-            return true;
+            return false;
         }
         return checksum;
     }

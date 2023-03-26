@@ -153,7 +153,7 @@
 71-->[com.android.installreferrer:installreferrer:1.1.2] /home/cloudmpower/.gradle/caches/transforms-3/547fe07c1a51467194fe200a4ae0c69f/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
 72
 73    <application
-73-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-98:19
+73-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-99:19
 74        android:name="com.apix.MainApplication"
 74-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:53:9-40
 75        android:allowBackup="false"
@@ -217,349 +217,352 @@
 106        <activity android:name="com.apix.NetworkTypeActivity" />
 106-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:78:9-57
 106-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:78:19-54
-107        <activity android:name="com.apix.LibraryCheck" /> <!-- <activity android:name=".DeviceBinding" /> -->
+107        <activity android:name="com.apix.LibraryCheck" />
 107-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:9-50
 107-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:19-47
-108        <activity
-108-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:81:9-83:47
-109            android:name="com.apix.NetworkType"
-109-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:13-40
-110            android:launchMode="singleTask" /> <!-- <receiver android:name=".Models.MySMSBroadcastReceiver" android:exported="true" -->
-110-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-44
-111        <!-- android:permission="com.google.android.gms.auth.api.phone.permission.SEND"> -->
-112        <!-- <intent-filter> -->
-113        <!-- <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/> -->
-114        <!-- </intent-filter> -->
-115        <!-- </receiver> -->
-116        <!-- Till here -->
-117        <meta-data
-117-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:95:9-97:71
-118            android:name="com.google.android.geo.API_KEY"
-118-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:13-58
-119            android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />
-119-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-68
-120
-121        <provider
-121-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
-122            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
-122-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
-123            android:authorities="com.bcb.provider"
-123-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
-124            android:exported="false"
-124-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
-125            android:grantUriPermissions="true" >
-125-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
-126            <meta-data
-126-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-127                android:name="android.support.FILE_PROVIDER_PATHS"
-127-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-128                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
-128-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-129        </provider>
-130
-131        <activity
-131-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
-132            android:name="com.yalantis.ucrop.UCropActivity"
-132-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
-133            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-133-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
-134
-135        <provider
-135-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
-136            android:name="cl.json.RNShareFileProvider"
-136-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
-137            android:authorities="com.bcb.rnshare.fileprovider"
-137-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
-138            android:exported="false"
-138-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
-139            android:grantUriPermissions="true" >
-139-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
-140            <meta-data
-140-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-141                android:name="android.support.FILE_PROVIDER_PATHS"
-141-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-142                android:resource="@xml/share_download_paths" />
-142-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-143        </provider>
-144        <provider
-144-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
-145            android:name="com.RNFetchBlob.Utils.FileProvider"
-145-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
-146            android:authorities="com.bcb.provider"
-146-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
-147            android:exported="false"
-147-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
-148            android:grantUriPermissions="true" >
-148-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
-149            <meta-data
-149-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
-150                android:name="android.support.FILE_PROVIDER_PATHS"
-150-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
-151                android:resource="@xml/provider_paths" />
-151-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
-152        </provider>
-153
-154        <activity
-154-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
-155            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-155-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
-156            android:excludeFromRecents="true"
-156-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
-157            android:exported="false"
-157-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
-158            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-158-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
-159        <!--
-160            Service handling Google Sign-In user revocation. For apps that do not integrate with
-161            Google Sign-In, this service will never be started.
-162        -->
-163        <service
-163-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
-164            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-164-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
-165            android:exported="true"
-165-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
-166            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-166-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
-167
-168        <provider
-168-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
-169            android:name="androidx.startup.InitializationProvider"
-169-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
-170            android:authorities="com.bcb.androidx-startup"
-170-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
-171            android:exported="false" >
-171-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
-172            <meta-data
-172-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
-173                android:name="androidx.work.WorkManagerInitializer"
-173-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
-174                android:value="androidx.startup" />
-174-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
-175            <meta-data
-175-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-176                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-176-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-177                android:value="androidx.startup" />
-177-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-178            <meta-data
-178-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-179                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-179-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-180                android:value="androidx.startup" />
-180-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-181        </provider>
-182
-183        <service
-183-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
-184            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-184-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
-185            android:directBootAware="false"
-185-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
-186            android:enabled="@bool/enable_system_alarm_service_default"
-186-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
-187            android:exported="false" />
-187-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
-188        <service
-188-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
-189            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-189-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
-190            android:directBootAware="false"
-190-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
-191            android:enabled="@bool/enable_system_job_service_default"
-191-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
-192            android:exported="true"
-192-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
-193            android:permission="android.permission.BIND_JOB_SERVICE" />
-193-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
-194        <service
-194-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
-195            android:name="androidx.work.impl.foreground.SystemForegroundService"
-195-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
-196            android:directBootAware="false"
-196-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
-197            android:enabled="@bool/enable_system_foreground_service_default"
-197-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
-198            android:exported="false" />
-198-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
-199
-200        <receiver
-200-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
-201            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-201-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
-202            android:directBootAware="false"
-202-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
-203            android:enabled="true"
-203-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
-204            android:exported="false" />
-204-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
-205        <receiver
-205-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
-206            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-206-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
-207            android:directBootAware="false"
-207-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
-208            android:enabled="false"
-208-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
-209            android:exported="false" >
-209-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
-210            <intent-filter>
-210-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
-211                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-211-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
-211-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
-212                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-212-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
-212-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
-213            </intent-filter>
-214        </receiver>
-215        <receiver
-215-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
-216            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-216-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
-217            android:directBootAware="false"
-217-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
-218            android:enabled="false"
-218-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
-219            android:exported="false" >
-219-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
-220            <intent-filter>
-220-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
-221                <action android:name="android.intent.action.BATTERY_OKAY" />
-221-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
-221-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
-222                <action android:name="android.intent.action.BATTERY_LOW" />
-222-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
-222-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
-223            </intent-filter>
-224        </receiver>
-225        <receiver
-225-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
-226            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-226-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
-227            android:directBootAware="false"
-227-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
-228            android:enabled="false"
-228-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
-229            android:exported="false" >
-229-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
-230            <intent-filter>
-230-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
-231                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-231-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
-231-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
-232                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-232-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
-232-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
-233            </intent-filter>
-234        </receiver>
-235        <receiver
-235-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
-236            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-236-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
-237            android:directBootAware="false"
-237-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
-238            android:enabled="false"
-238-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
-239            android:exported="false" >
-239-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
-240            <intent-filter>
-240-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
-241                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-241-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
-241-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
-242            </intent-filter>
-243        </receiver>
-244        <receiver
-244-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
-245            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-245-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
-246            android:directBootAware="false"
-246-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
-247            android:enabled="false"
-247-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
-248            android:exported="false" >
-248-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
-249            <intent-filter>
-249-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
-250                <action android:name="android.intent.action.BOOT_COMPLETED" />
-250-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:17-79
-250-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:25-76
-251                <action android:name="android.intent.action.TIME_SET" />
-251-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
-251-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
-252                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-252-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
-252-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
-253            </intent-filter>
-254        </receiver>
-255        <receiver
-255-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
-256            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-256-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
-257            android:directBootAware="false"
-257-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
-258            android:enabled="@bool/enable_system_alarm_service_default"
-258-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
-259            android:exported="false" >
-259-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
-260            <intent-filter>
-260-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
-261                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-261-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
-261-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
-262            </intent-filter>
-263        </receiver>
-264        <receiver
-264-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
-265            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-265-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
-266            android:directBootAware="false"
-266-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
-267            android:enabled="true"
-267-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
-268            android:exported="true"
-268-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
-269            android:permission="android.permission.DUMP" >
-269-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
-270            <intent-filter>
-270-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
-271                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-271-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
-271-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
-272            </intent-filter>
-273        </receiver>
-274
-275        <service
-275-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
-276            android:name="androidx.room.MultiInstanceInvalidationService"
-276-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
-277            android:directBootAware="true"
-277-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
-278            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
-278-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
-279        <uses-library
-279-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
-280            android:name="org.apache.http.legacy"
-280-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:40:13-50
-281            android:required="false" />
-281-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:41:13-37
-282
-283        <activity
-283-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
-284            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-284-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
-285            android:exported="false"
-285-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
-286            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-286-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
-287
-288        <meta-data
-288-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
-289            android:name="com.google.android.gms.version"
-289-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
-290            android:value="@integer/google_play_services_version" />
-290-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
-291    </application>
-292
-293</manifest>
+108        <activity android:name="com.apix.permission" /> <!-- <activity android:name=".DeviceBinding" /> -->
+108-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:9-48
+108-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:19-45
+109        <activity
+109-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:9-84:47
+110            android:name="com.apix.NetworkType"
+110-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-40
+111            android:launchMode="singleTask" /> <!-- <receiver android:name=".Models.MySMSBroadcastReceiver" android:exported="true" -->
+111-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:84:13-44
+112        <!-- android:permission="com.google.android.gms.auth.api.phone.permission.SEND"> -->
+113        <!-- <intent-filter> -->
+114        <!-- <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/> -->
+115        <!-- </intent-filter> -->
+116        <!-- </receiver> -->
+117        <!-- Till here -->
+118        <meta-data
+118-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:9-98:71
+119            android:name="com.google.android.geo.API_KEY"
+119-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-58
+120            android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />
+120-->/home/cloudmpower/Documents/react/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:98:13-68
+121
+122        <provider
+122-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
+123            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+123-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
+124            android:authorities="com.bcb.provider"
+124-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
+125            android:exported="false"
+125-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+126            android:grantUriPermissions="true" >
+126-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
+127            <meta-data
+127-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+128                android:name="android.support.FILE_PROVIDER_PATHS"
+128-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+129                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+129-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+130        </provider>
+131
+132        <activity
+132-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
+133            android:name="com.yalantis.ucrop.UCropActivity"
+133-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
+134            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+134-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
+135
+136        <provider
+136-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+137            android:name="cl.json.RNShareFileProvider"
+137-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-55
+138            android:authorities="com.bcb.rnshare.fileprovider"
+138-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-72
+139            android:exported="false"
+139-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+140            android:grantUriPermissions="true" >
+140-->[:react-native-share] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-share/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+141            <meta-data
+141-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+142                android:name="android.support.FILE_PROVIDER_PATHS"
+142-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+143                android:resource="@xml/share_download_paths" />
+143-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+144        </provider>
+145        <provider
+145-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
+146            android:name="com.RNFetchBlob.Utils.FileProvider"
+146-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
+147            android:authorities="com.bcb.provider"
+147-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
+148            android:exported="false"
+148-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
+149            android:grantUriPermissions="true" >
+149-->[:rn-fetch-blob] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
+150            <meta-data
+150-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+151                android:name="android.support.FILE_PROVIDER_PATHS"
+151-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+152                android:resource="@xml/provider_paths" />
+152-->[:react-native-image-crop-picker] /home/cloudmpower/Documents/react/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+153        </provider>
+154
+155        <activity
+155-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
+156            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+156-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
+157            android:excludeFromRecents="true"
+157-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
+158            android:exported="false"
+158-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
+159            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+159-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
+160        <!--
+161            Service handling Google Sign-In user revocation. For apps that do not integrate with
+162            Google Sign-In, this service will never be started.
+163        -->
+164        <service
+164-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
+165            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+165-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
+166            android:exported="true"
+166-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
+167            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+167-->[com.google.android.gms:play-services-auth:17.0.0] /home/cloudmpower/.gradle/caches/transforms-3/844bcb21b9886d17c185f428b4346a29/transformed/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
+168
+169        <provider
+169-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
+170            android:name="androidx.startup.InitializationProvider"
+170-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
+171            android:authorities="com.bcb.androidx-startup"
+171-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
+172            android:exported="false" >
+172-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37
+173            <meta-data
+173-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:36:13-38:52
+174                android:name="androidx.work.WorkManagerInitializer"
+174-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:37:17-68
+175                android:value="androidx.startup" />
+175-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:38:17-49
+176            <meta-data
+176-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+177                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+177-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+178                android:value="androidx.startup" />
+178-->[androidx.emoji2:emoji2:1.2.0] /home/cloudmpower/.gradle/caches/transforms-3/9e672268aed1c740d7602ead971e5a60/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+179            <meta-data
+179-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+180                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+180-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+181                android:value="androidx.startup" />
+181-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/cloudmpower/.gradle/caches/transforms-3/5131882f8653bc7671e041e30763e310/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+182        </provider>
+183
+184        <service
+184-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:41:9-46:35
+185            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+185-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:42:13-88
+186            android:directBootAware="false"
+186-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:43:13-44
+187            android:enabled="@bool/enable_system_alarm_service_default"
+187-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:44:13-72
+188            android:exported="false" />
+188-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:45:13-37
+189        <service
+189-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:47:9-53:35
+190            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+190-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:48:13-84
+191            android:directBootAware="false"
+191-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:49:13-44
+192            android:enabled="@bool/enable_system_job_service_default"
+192-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:50:13-70
+193            android:exported="true"
+193-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:51:13-36
+194            android:permission="android.permission.BIND_JOB_SERVICE" />
+194-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:52:13-69
+195        <service
+195-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:54:9-59:35
+196            android:name="androidx.work.impl.foreground.SystemForegroundService"
+196-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:55:13-81
+197            android:directBootAware="false"
+197-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:56:13-44
+198            android:enabled="@bool/enable_system_foreground_service_default"
+198-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:57:13-77
+199            android:exported="false" />
+199-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:58:13-37
+200
+201        <receiver
+201-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:61:9-66:35
+202            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+202-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:62:13-88
+203            android:directBootAware="false"
+203-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:63:13-44
+204            android:enabled="true"
+204-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:64:13-35
+205            android:exported="false" />
+205-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:65:13-37
+206        <receiver
+206-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:67:9-77:20
+207            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+207-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:68:13-106
+208            android:directBootAware="false"
+208-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:69:13-44
+209            android:enabled="false"
+209-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:70:13-36
+210            android:exported="false" >
+210-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:71:13-37
+211            <intent-filter>
+211-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:73:13-76:29
+212                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+212-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:17-87
+212-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:74:25-84
+213                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+213-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:17-90
+213-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:75:25-87
+214            </intent-filter>
+215        </receiver>
+216        <receiver
+216-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:78:9-88:20
+217            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+217-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:79:13-104
+218            android:directBootAware="false"
+218-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:80:13-44
+219            android:enabled="false"
+219-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:81:13-36
+220            android:exported="false" >
+220-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:82:13-37
+221            <intent-filter>
+221-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:84:13-87:29
+222                <action android:name="android.intent.action.BATTERY_OKAY" />
+222-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:17-77
+222-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:85:25-74
+223                <action android:name="android.intent.action.BATTERY_LOW" />
+223-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:17-76
+223-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:86:25-73
+224            </intent-filter>
+225        </receiver>
+226        <receiver
+226-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:89:9-99:20
+227            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+227-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:90:13-104
+228            android:directBootAware="false"
+228-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:91:13-44
+229            android:enabled="false"
+229-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:92:13-36
+230            android:exported="false" >
+230-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:93:13-37
+231            <intent-filter>
+231-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:95:13-98:29
+232                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+232-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:17-83
+232-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:96:25-80
+233                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+233-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:17-82
+233-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:97:25-79
+234            </intent-filter>
+235        </receiver>
+236        <receiver
+236-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:100:9-109:20
+237            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+237-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:101:13-103
+238            android:directBootAware="false"
+238-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:102:13-44
+239            android:enabled="false"
+239-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:103:13-36
+240            android:exported="false" >
+240-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:104:13-37
+241            <intent-filter>
+241-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:106:13-108:29
+242                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+242-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:17-79
+242-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:107:25-76
+243            </intent-filter>
+244        </receiver>
+245        <receiver
+245-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:110:9-121:20
+246            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+246-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:111:13-88
+247            android:directBootAware="false"
+247-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:112:13-44
+248            android:enabled="false"
+248-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:113:13-36
+249            android:exported="false" >
+249-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:114:13-37
+250            <intent-filter>
+250-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:116:13-120:29
+251                <action android:name="android.intent.action.BOOT_COMPLETED" />
+251-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:17-79
+251-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:117:25-76
+252                <action android:name="android.intent.action.TIME_SET" />
+252-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:17-73
+252-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:118:25-70
+253                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+253-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:17-81
+253-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:119:25-78
+254            </intent-filter>
+255        </receiver>
+256        <receiver
+256-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:122:9-131:20
+257            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+257-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:123:13-99
+258            android:directBootAware="false"
+258-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:124:13-44
+259            android:enabled="@bool/enable_system_alarm_service_default"
+259-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:125:13-72
+260            android:exported="false" >
+260-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:126:13-37
+261            <intent-filter>
+261-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:128:13-130:29
+262                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+262-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:17-98
+262-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:129:25-95
+263            </intent-filter>
+264        </receiver>
+265        <receiver
+265-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:132:9-142:20
+266            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+266-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:133:13-78
+267            android:directBootAware="false"
+267-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:134:13-44
+268            android:enabled="true"
+268-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:135:13-35
+269            android:exported="true"
+269-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:136:13-36
+270            android:permission="android.permission.DUMP" >
+270-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:137:13-57
+271            <intent-filter>
+271-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:139:13-141:29
+272                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+272-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:17-88
+272-->[androidx.work:work-runtime:2.7.1] /home/cloudmpower/.gradle/caches/transforms-3/bd2173fe6eef313c543c07ae27a06b6b/transformed/work-runtime-2.7.1/AndroidManifest.xml:140:25-85
+273            </intent-filter>
+274        </receiver>
+275
+276        <service
+276-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+277            android:name="androidx.room.MultiInstanceInvalidationService"
+277-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+278            android:directBootAware="true"
+278-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+279            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
+279-->[androidx.room:room-runtime:2.2.5] /home/cloudmpower/.gradle/caches/transforms-3/ba9933d9cd6a1b5f10118c4e46ee8162/transformed/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+280        <uses-library
+280-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:39:9-41:40
+281            android:name="org.apache.http.legacy"
+281-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:40:13-50
+282            android:required="false" />
+282-->[com.google.android.gms:play-services-maps:18.0.2] /home/cloudmpower/.gradle/caches/transforms-3/9a3ae9996c84881eb555486a7f7a5647/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:41:13-37
+283
+284        <activity
+284-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+285            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+285-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+286            android:exported="false"
+286-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+287            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+287-->[com.google.android.gms:play-services-base:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f021fd454aebf8098ae65b057249aee0/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+288
+289        <meta-data
+289-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+290            android:name="com.google.android.gms.version"
+290-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+291            android:value="@integer/google_play_services_version" />
+291-->[com.google.android.gms:play-services-basement:18.1.0] /home/cloudmpower/.gradle/caches/transforms-3/f2dbd150b519917d37a06cb0ca888d27/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+292    </application>
+293
+294</manifest>
