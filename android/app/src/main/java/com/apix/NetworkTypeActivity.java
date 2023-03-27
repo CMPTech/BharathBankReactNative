@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -43,6 +44,15 @@ public class NetworkTypeActivity extends AppCompatActivity {
         editText = (TextView) findViewById(R.id.textView1);
         this.wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         locationEnabled();
+//        isBackground();
+        ActivityManager.RunningAppProcessInfo myProcess = new ActivityManager.RunningAppProcessInfo();
+        ActivityManager.getMyMemoryState(myProcess);
+        boolean isInBackground = myProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
+        if(isInBackground) {
+            Log.d("Tutorialspoint.com","Your application is in background state");
+        }else{
+            Log.d("Tutorialspoint.com","Your application is in foreground state");
+        }
     }
 
     @Override
@@ -50,6 +60,23 @@ public class NetworkTypeActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(this,"Triggered from onResume function",Toast.LENGTH_LONG).show();
         locationEnabled();
+    }
+
+    @Override
+    public void onRestart() {
+        // It will show a message on the screen
+        // then onRestart is invoked
+        super.onRestart();
+        Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG).show();
+        locationEnabled();
+    }
+
+    protected void onStop() {
+        // It will show a message on the screen
+        // then onStop is invoked
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG).show();
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     private void location() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -228,5 +255,16 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Do Here what ever you want do on back press;
+    }
+
+    public void isBackground(){
+        ActivityManager.RunningAppProcessInfo myProcess = new ActivityManager.RunningAppProcessInfo();
+        ActivityManager.getMyMemoryState(myProcess);
+        boolean isInBackground = myProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
+        if(isInBackground) {
+            Log.d("Tutorialspoint.com","Your application is in background state");
+        }else{
+            Log.d("Tutorialspoint.com","Your application is in foreground state");
+        }
     }
 }
