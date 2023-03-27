@@ -37,6 +37,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
     private WifiManager wifiManager;
     String NetworkType = "";
     private TextView editText;
+    private boolean allChecksPassed = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,30 +45,13 @@ public class NetworkTypeActivity extends AppCompatActivity {
         editText = (TextView) findViewById(R.id.textView1);
         this.wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         locationEnabled();
-//        isBackground();
-        ActivityManager.RunningAppProcessInfo myProcess = new ActivityManager.RunningAppProcessInfo();
-        ActivityManager.getMyMemoryState(myProcess);
-        boolean isInBackground = myProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
-        if(isInBackground) {
-            Log.d("Tutorialspoint.com","Your application is in background state");
-        }else{
-            Log.d("Tutorialspoint.com","Your application is in foreground state");
-        }
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        Toast.makeText(this,"Triggered from onResume function",Toast.LENGTH_LONG).show();
-        locationEnabled();
-    }
-
-    @Override
-    public void onRestart() {
-        // It will show a message on the screen
-        // then onRestart is invoked
-        super.onRestart();
-        Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG).show();
+        Log.d("onResume", "onResume: invoke ");
+//        Toast.makeText(this,"Triggered from onResume function",Toast.LENGTH_LONG).show();
         locationEnabled();
     }
 
@@ -75,8 +59,9 @@ public class NetworkTypeActivity extends AppCompatActivity {
         // It will show a message on the screen
         // then onStop is invoked
         super.onStop();
-        Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG).show();
-        android.os.Process.killProcess(android.os.Process.myPid());
+        Log.d("onStop", "onStop: invoke ");
+//        Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG).show();
+        if(!allChecksPassed) android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     private void location() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -216,6 +201,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
                     Toast.makeText(this,"Triggered before loading react app.",Toast.LENGTH_LONG).show();
+                    allChecksPassed = true;
                     MainApplication.getInstance().Backtomain();
                     return;
                 }else{
@@ -255,16 +241,5 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Do Here what ever you want do on back press;
-    }
-
-    public void isBackground(){
-        ActivityManager.RunningAppProcessInfo myProcess = new ActivityManager.RunningAppProcessInfo();
-        ActivityManager.getMyMemoryState(myProcess);
-        boolean isInBackground = myProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND;
-        if(isInBackground) {
-            Log.d("Tutorialspoint.com","Your application is in background state");
-        }else{
-            Log.d("Tutorialspoint.com","Your application is in foreground state");
-        }
     }
 }
