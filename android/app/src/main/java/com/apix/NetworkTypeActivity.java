@@ -36,6 +36,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
     private WifiManager wifiManager;
     String NetworkType = "";
     private TextView editText;
+    private boolean allChecksPassed = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,23 +49,16 @@ public class NetworkTypeActivity extends AppCompatActivity {
     @Override
     public void onResume(){
         super.onResume();
-        try {
-            location();
-        } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
+        Log.d("onResume", "onResume: invoke ");
+        locationEnabled();
     }
 
-    private void location() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        LocationManager lm = (LocationManager) getSystemService(Context. LOCATION_SERVICE ) ;
-        boolean gps_enabled;
-        boolean network_enabled;
-        gps_enabled = lm.isProviderEnabled(LocationManager. GPS_PROVIDER ) ;
-        network_enabled = lm.isProviderEnabled(LocationManager. NETWORK_PROVIDER ) ;
-        if (gps_enabled && network_enabled) {
-            askAndStartScanWifi();
-        }
+    protected void onStop() {
+        super.onStop();
+        Log.d("onStop", "onStop: invoke ");
+        if(!allChecksPassed) android.os.Process.killProcess(android.os.Process.myPid());
     }
+
 
     private void locationEnabled(){
         LocationManager lm = (LocationManager)
@@ -102,7 +96,12 @@ public class NetworkTypeActivity extends AppCompatActivity {
                                     startActivity( new Intent(Settings. ACTION_LOCATION_SOURCE_SETTINGS )) ;
                                 }
                             })
-                    .setNegativeButton( "Cancel" , null )
+                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+                        }
+                    })
                     .show() ;
         }
     }
@@ -153,10 +152,10 @@ public class NetworkTypeActivity extends AppCompatActivity {
                     } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
                         // permission i denied
 //                        Log.d(LOG_TAG, "Permission Denied: ");
-//                        Alert("We need network permission to continue further. Please close the app and allow permissions and then relaunch the app to continue ");
                         editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
                     } else {
                         // permission i denied and don't ask for it again
+                        editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
                     }
                     break;
                 default:
@@ -184,6 +183,8 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 Log.d("The network Type is : ", list.get(i).capabilities);
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
+                    allChecksPassed = true;
+//                    MainApplication.getInstance().Backtomain();
                     MainApplication.getInstance().deviceBinding();
                     return;
                 }else{
@@ -218,5 +219,10 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
 
         return mobileYN;
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 }

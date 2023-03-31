@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.checkremoteappslib.checkRemoteApps;
 import com.example.checksumlib.Checksumlib;
 import com.example.rootcheckerlib.RootLib;
 
@@ -57,8 +58,9 @@ public class LibraryCheck extends AppCompatActivity {
         return checksum;
     }
 
-    public boolean malwareApps(boolean value, Context context, String appname){
-        if(value){
+    public boolean malwareApps(String pname, Context context, String appname){
+        boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(pname, context.getPackageManager());
+        if(isPackageInstalled){
             Log.d("App close","App closed");
             Toast.makeText(context, "Please uninstall " + appname + " before opening the app again.", Toast.LENGTH_LONG).show();
             // Use for finish the app
@@ -69,8 +71,9 @@ public class LibraryCheck extends AppCompatActivity {
                     android.os.Process.killProcess(android.os.Process.myPid());
                 }
             }, 5000);
-            return value;
+            return isPackageInstalled;
         }
-        return value;
+        return isPackageInstalled;
     }
+
 }

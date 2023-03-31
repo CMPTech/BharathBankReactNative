@@ -81,13 +81,12 @@ public class DeviceBinding extends AppCompatActivity {
         editText = (EditText)findViewById(R.id.text_input_edit_text1);
         button = (Button)findViewById(R.id.button_id);
 
-        //Run FindAPI first
-        //if FindAPI returns true run
-        //verifyMetaData();
+        //Run verifyMetadata first
+        verifyMetaData();
         // if the api is successfull render main activity.
         //MainApplication.getInstance().Backtomain();
         //if api returns false
-        //close the app
+        //Start the device binding process (run primaryFn)
 
         //if FindAPI returns false run
         primaryFn();
@@ -117,7 +116,6 @@ public class DeviceBinding extends AppCompatActivity {
         button.setOnClickListener(
                 v -> {
                     phno = editText.getText().toString();
-                    Toast.makeText(DeviceBinding.this, "Welcome to BCB " + phno, Toast.LENGTH_LONG).show();
                     sendMetadata();
                     fetchToken();
                 });

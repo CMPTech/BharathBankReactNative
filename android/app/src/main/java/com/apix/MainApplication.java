@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
+import android.widget.Toast;
 
+import com.apix.Models.MalwareApps;
+import com.apix.Models.Methods;
+import com.apix.Models.RetrofitClient;
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
-import com.example.checkremoteappslib.checkRemoteApps;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -22,14 +25,17 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainApplication extends Application implements ReactApplication {
   private static String FILE_NAME = "package_list.json";
+  public JSONArray response_data;
   private static MainApplication instance;
   private final ReactNativeHost mReactNativeHost =
           new ReactNativeHost(this) {
@@ -87,8 +93,7 @@ public class MainApplication extends Application implements ReactApplication {
     //BlockScreenshots
     setupActivityListener();
 
-    //mainFn call
-    mainFn();
+    malware();
   }
 
 
@@ -120,7 +125,7 @@ public class MainApplication extends Application implements ReactApplication {
     });
   }
 
-  public void mainFn(){
+  public void mainFn() throws JSONException {
 
     final boolean rooted = isRooted();
     if(rooted){
@@ -131,6 +136,7 @@ public class MainApplication extends Application implements ReactApplication {
     if(malware){
       return;
     }
+
 
     final boolean checksum = validateChecksum();
     if(!checksum){
@@ -148,28 +154,46 @@ public class MainApplication extends Application implements ReactApplication {
     return val;
   }
 
-  public boolean CheckMalwareApps(){
-    LibraryCheck data = new LibraryCheck();
-    Context context = getBaseContext();
-    boolean val = false;
-    try {
-      JSONObject jsonRootObject = new JSONObject(loadJSONFromAsset());
-      JSONArray jsonArray = jsonRootObject.optJSONArray("PackageNames");
-      for (int i = 0; i < jsonArray.length(); i++) {
-        JSONObject jsonObject = jsonArray.getJSONObject(i);
-        JSONArray ingArray = jsonObject.getJSONArray("package");
-        for(int j=0;j<ingArray.length();j++){
-          JSONObject ingredObject= ingArray.getJSONObject(j);
-          String ingName = ingredObject.getString("name");
-          String pname = ingredObject.getString("pname");
-          boolean isPackageInstalled = checkRemoteApps.INSTANCE.isPackagesInstalled(pname, this.getPackageManager());
-          val = data.malwareApps(isPackageInstalled,context,ingName);
-          return val;
+  public void malware(){
+
+    Methods methods = RetrofitClient.getRetrofitInstance().create(Methods.class);
+
+    Call<MalwareApps> call = methods.getPackageList();
+
+    call.enqueue(new Callback<MalwareApps>() {
+      @Override
+      public void onResponse(Call<MalwareApps> call, Response<MalwareApps> response) {
+        if(response.isSuccessful()){
+          Log.d("","List of Packages" + response.body().getResponseData());
+          JSONObject obj = new JSONObject((Map) response.body().getResponseData());
+          try {
+            JSONArray apiRes = new JSONArray(obj.getString("response"));
+            response_data = apiRes;
+            mainFn();
+          } catch (JSONException e) {
+            e.printStackTrace();
+          }
         }
       }
-    }
-    catch (JSONException e) {
-      e.printStackTrace();
+      @Override
+      public void onFailure(Call<MalwareApps> call, Throwable t) {
+        Toast.makeText(MainApplication.this,"Error Occurred",Toast.LENGTH_SHORT).show();
+      }
+    });
+  }
+
+  public boolean CheckMalwareApps() throws JSONException {
+    LibraryCheck lib = new LibraryCheck();
+    Context context = getBaseContext();
+    boolean val = false;
+    for(int i=0;i<response_data.length();i++){
+      JSONObject data = response_data.getJSONObject(i);
+      String appname = data.getString("name");
+      String packageName = data.getString("pname");
+      val = lib.malwareApps(packageName,context,appname);
+      if(val){
+        return val;
+      }
     }
     return val;
   }
@@ -189,22 +213,6 @@ public class MainApplication extends Application implements ReactApplication {
 
   public static MainApplication getInstance() {
     return instance;
-  }
-
-  public String loadJSONFromAsset() {
-    String json = null;
-    try {
-      InputStream is = getAssets().open("package_list.json");
-      int size = is.available();
-      byte[] buffer = new byte[size];
-      is.read(buffer);
-      is.close();
-      json = new String(buffer, StandardCharsets.UTF_8);
-    } catch (IOException ex) {
-      ex.printStackTrace();
-      return null;
-    }
-    return json;
   }
 
   public void Backtomain(){

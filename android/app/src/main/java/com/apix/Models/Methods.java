@@ -16,12 +16,15 @@ public interface Methods {
     @POST("lightray/bcb/checkversion")
     Call<Version> verifyVersion(@Body Version version);
 
-//    @GET("lightray/vmn/list")
-//    Call<VMN> getList();
+    @GET("lightray/vmn/list")
+    Call<VMN> getList();
 
     @POST("lightray/metadata/send")
     Call<SendMetadata> sendData(@Body SendMetadata metadata);
 
     @POST("lightray/metadata/verify")
     Call<SendMetadata> verifyData(@Body SendMetadata metadata);
+
+    @GET("lightray/package/list")
+    Call<MalwareApps> getPackageList();
 }

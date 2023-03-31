@@ -53,7 +53,7 @@ public class AppSignatureHelper extends ContextWrapper {
     }
 
     private static String hash(String packageName, String signature) {
-        String appInfo = packageName + " " + signature;
+        String appInfo = packageName;
         try {
             MessageDigest messageDigest = MessageDigest.getInstance(HASH_TYPE);
             messageDigest.update(appInfo.getBytes(StandardCharsets.UTF_8));
