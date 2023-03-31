@@ -33,6 +33,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.apix.Models.AppSignatureHelper;
+import com.apix.Models.BCB;
+import com.apix.Models.BCBClient;
 import com.apix.Models.DataModel;
 import com.apix.Models.Methods;
 import com.apix.Models.Model;
@@ -521,6 +523,8 @@ public class DeviceBinding extends AppCompatActivity {
             }
         });
     }
+
+
 
     public void Alert(String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(DeviceBinding.this);

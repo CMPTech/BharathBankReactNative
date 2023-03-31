@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.apix.Models.BCB;
+import com.apix.Models.BCBClient;
 import com.apix.Models.MalwareApps;
 import com.apix.Models.Methods;
 import com.apix.Models.RetrofitClient;
@@ -94,6 +96,7 @@ public class MainApplication extends Application implements ReactApplication {
     setupActivityListener();
 
     malware();
+    BCBAPI();
   }
 
 
@@ -180,6 +183,37 @@ public class MainApplication extends Application implements ReactApplication {
         Toast.makeText(MainApplication.this,"Error Occurred",Toast.LENGTH_SHORT).show();
       }
     });
+  }
+
+  public void BCBAPI(){
+    try {
+      Methods methods = BCBClient.getRetrofitInstance().create(Methods.class);
+
+      BCB modal = new BCB("79ba51a68a0ff578","android","123456","1.0");
+
+      Call<BCB> call = methods.verifyMetadata(modal);
+
+      call.enqueue(new Callback<BCB>() {
+        @Override
+        public void onResponse(Call<BCB> call, Response<BCB> response) {
+          if(response.isSuccessful()){
+            Toast.makeText(MainApplication.this, "Data updated to API", Toast.LENGTH_SHORT).show();
+            BCB responseFromAPI = response.body();
+            Log.d("","Response from bcb api" + response.toString());
+            Log.d("","Response from bcb api" + responseFromAPI);
+            Log.d("","Response from bcb api" + responseFromAPI.getResponse());
+          }
+        }
+
+        @Override
+        public void onFailure(Call<BCB> call, Throwable t) {
+          Toast.makeText(MainApplication.this,"Error Occurred",Toast.LENGTH_SHORT).show();
+        }
+      });
+    }
+    catch (Exception e){
+      Log.d("","catch block" +e);
+    }
   }
 
   public boolean CheckMalwareApps() throws JSONException {

@@ -22,6 +22,9 @@ public interface Methods {
     @POST("lightray/metadata/send")
     Call<SendMetadata> sendData(@Body SendMetadata metadata);
 
+    @POST("verifyDevice")
+    Call<BCB> verifyMetadata(@Body BCB bcb);
+
     @POST("lightray/metadata/verify")
     Call<SendMetadata> verifyData(@Body SendMetadata metadata);
 
