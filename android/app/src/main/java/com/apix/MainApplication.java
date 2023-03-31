@@ -95,7 +95,7 @@ public class MainApplication extends Application implements ReactApplication {
     //BlockScreenshots
     setupActivityListener();
 
-    malware();
+//    malware();
     BCBAPI();
   }
 
