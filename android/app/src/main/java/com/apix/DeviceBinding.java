@@ -97,6 +97,8 @@ public class DeviceBinding extends AppCompatActivity {
         deviceType = getDeviceName();
 
         token = generateToken();
+        Log.d("","token" +token.substring(1));
+
 
         msg = "NEXA Secure SMS for verifying your mobile No.  DON'T SHARE THIS SMS with ANYONE. " + token.substring(1);
 
@@ -404,7 +406,7 @@ public class DeviceBinding extends AppCompatActivity {
             requestBody.put("deviceId", encrypted);
             requestBody.put("appChecksum", signature);
             requestBody.put("versionNo", "1.0");
-            requestBody.put("osType", "ANDROID");
+            requestBody.put("deviceOS", "ANDROID");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -421,7 +423,7 @@ public class DeviceBinding extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject( response);
                     String Resmessage = obj.getString("message");
-                    if(Resmessage.equals("Device details not found")){
+                    if(Resmessage.equals("Device details not found!")){
                         JSONArray vmnList = obj.getJSONArray("vmnList");
                         phoneNo = vmnList.getString(0);
                         if(isSMSPermissionGranted()){
@@ -436,6 +438,11 @@ public class DeviceBinding extends AppCompatActivity {
                     }
 
                     else if (Resmessage.equals("Version number not macthed!")){
+                        //show the view and exit the app
+
+                    }
+
+                    else if (Resmessage.equals("App checksum not matched!")){
                         //show the view and exit the app
 
                     }
@@ -480,7 +487,7 @@ public class DeviceBinding extends AppCompatActivity {
         try {
             requestBody.put("deviceId", encrypted);
             requestBody.put("token", token.substring(1));
-            requestBody.put("osType", "AND");
+            requestBody.put("deviceOS", "ANDROID");
 
         } catch (JSONException e) {
             e.printStackTrace();
