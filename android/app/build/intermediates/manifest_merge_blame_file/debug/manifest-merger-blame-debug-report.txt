@@ -48,8 +48,8 @@
 22-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:19:5-79
 22-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:19:22-76
 23    <uses-permission android:name="android.permission.SEND_SMS" />
-23-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:20:5-66
-23-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:20:22-64
+23-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:20:5-68
+23-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:20:22-65
 24    <uses-permission android:name="android.permission.GET_TASKS" />
 24-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:21:5-67
 24-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:21:22-65
@@ -153,7 +153,7 @@
 71-->[com.android.installreferrer:installreferrer:1.1.2] /home/cloudmpower/.gradle/caches/transforms-3/547fe07c1a51467194fe200a4ae0c69f/transformed/jetified-installreferrer-1.1.2/AndroidManifest.xml:9:22-107
 72
 73    <application
-73-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-98:19
+73-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:52:5-99:19
 74        android:name="com.apix.MainApplication"
 74-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:53:9-40
 75        android:allowBackup="false"
@@ -184,73 +184,73 @@
 89            android:exported="false" />
 89-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/debug/AndroidManifest.xml:11:84-108
 90        <activity
-90-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:61:9-74:20
+90-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:62:9-75:20
 91            android:name="com.apix.MainActivity"
-91-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:62:13-41
+91-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:63:13-41
 92            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-92-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:63:13-122
+92-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:64:13-122
 93            android:exported="true"
-93-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:64:13-36
+93-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:65:13-36
 94            android:label="@string/app_name"
-94-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:65:13-45
+94-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:66:13-45
 95            android:launchMode="singleTask"
-95-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:66:13-44
+95-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:67:13-44
 96            android:screenOrientation="portrait"
-96-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:67:13-49
+96-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:68:13-49
 97            android:windowSoftInputMode="adjustPan" >
-97-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:68:13-52
+97-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:69:13-52
 98            <intent-filter>
-98-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:69:13-73:29
+98-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:70:13-74:29
 99                <action android:name="android.intent.action.MAIN" />
-99-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:70:17-69
-99-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:70:25-66
+99-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:71:17-69
+99-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:71:25-66
 100
 101                <category android:name="android.intent.category.LAUNCHER" />
-101-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:71:17-77
-101-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:71:27-74
+101-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:72:17-77
+101-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:72:27-74
 102
 103                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-103-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:72:18-82
-103-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:72:26-80
+103-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:73:18-82
+103-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:73:26-80
 104            </intent-filter>
 105        </activity> <!-- Activity mentioned in the manifest -->
 106        <activity android:name="com.apix.NetworkTypeActivity" />
-106-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:78:9-57
-106-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:78:19-54
+106-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:9-57
+106-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:19-54
 107        <activity android:name="com.apix.LibraryCheck" />
-107-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:9-50
-107-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:79:19-47
+107-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:9-50
+107-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:19-47
 108        <activity android:name="com.apix.DeviceBinding" />
-108-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:9-51
-108-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:80:19-48
+108-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:81:9-51
+108-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:81:19-48
 109        <activity
-109-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:81:9-83:47
+109-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:9-84:47
 110            android:name="com.apix.NetworkType"
-110-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:82:13-40
+110-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-40
 111            android:launchMode="singleTask" />
-111-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:83:13-44
+111-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:84:13-44
 112
 113        <receiver
-113-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:85:9-90:20
+113-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:86:9-91:20
 114            android:name="com.apix.Models.MySMSBroadcastReceiver"
-114-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:85:19-64
+114-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:86:19-64
 115            android:exported="true"
-115-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:85:65-88
+115-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:86:65-88
 116            android:permission="com.google.android.gms.auth.api.phone.permission.SEND" >
-116-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:86:13-87
+116-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:87:13-87
 117            <intent-filter>
-117-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:87:13-89:29
+117-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:88:13-90:29
 118                <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED" />
-118-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:88:17-93
-118-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:88:25-91
+118-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:89:17-93
+118-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:89:25-91
 119            </intent-filter>
 120        </receiver> <!-- Till here -->
 121        <meta-data
-121-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:95:9-97:71
+121-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:9-98:71
 122            android:name="com.google.android.geo.API_KEY"
-122-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:96:13-58
+122-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-58
 123            android:value="AIzaSyDpCW0wZTt7WzOPNGEn1r28QT2llJN05Z4" />
-123-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:97:13-68
+123-->/home/cloudmpower/Desktop/BharathBankReactNative/android/app/src/main/AndroidManifest.xml:98:13-68
 124
 125        <provider
 125-->[:react-native-image-crop-picker] /home/cloudmpower/Desktop/BharathBankReactNative/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20

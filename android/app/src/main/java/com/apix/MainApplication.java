@@ -9,11 +9,14 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.apix.Models.BCB;
-import com.apix.Models.BCBClient;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.apix.Models.MalwareApps;
-import com.apix.Models.Methods;
-import com.apix.Models.RetrofitClient;
 import com.apix.newarchitecture.MainApplicationReactNativeHost;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
@@ -28,12 +31,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainApplication extends Application implements ReactApplication {
   private static String FILE_NAME = "package_list.json";
@@ -95,8 +98,7 @@ public class MainApplication extends Application implements ReactApplication {
     //BlockScreenshots
     setupActivityListener();
 
-//    malware();
-    BCBAPI();
+    malware();
   }
 
 
@@ -158,62 +160,47 @@ public class MainApplication extends Application implements ReactApplication {
   }
 
   public void malware(){
+    RequestQueue queue = Volley.newRequestQueue(this);
 
-    Methods methods = RetrofitClient.getRetrofitInstance().create(Methods.class);
 
-    Call<MalwareApps> call = methods.getPackageList();
+    // Create a JSONObject to hold the request body
+//        JSONObject requestBody = new JSONObject();
 
-    call.enqueue(new Callback<MalwareApps>() {
+    String url = "http://nexanew.bharatbank.com:9090/apigateway/smart-service/public/malwares";
+
+// Create a new StringRequest object
+    StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
       @Override
-      public void onResponse(Call<MalwareApps> call, Response<MalwareApps> response) {
-        if(response.isSuccessful()){
-          Log.d("","List of Packages" + response.body().getResponseData());
-          JSONObject obj = new JSONObject((Map) response.body().getResponseData());
-          try {
-            JSONArray apiRes = new JSONArray(obj.getString("response"));
-            response_data = apiRes;
-            mainFn();
-          } catch (JSONException e) {
-            e.printStackTrace();
-          }
+      public void onResponse(String response) {
+        // Handle the response
+        Log.e("","response from 3rd api" +response);
+        try {
+          JSONObject obj = new JSONObject(response);
+          JSONArray apiRes = new JSONArray(obj.getString("malwares"));
+          response_data = apiRes;
+          mainFn();
+        } catch (JSONException e) {
+          e.printStackTrace();
         }
       }
+    }, new Response.ErrorListener() {
       @Override
-      public void onFailure(Call<MalwareApps> call, Throwable t) {
-        Toast.makeText(MainApplication.this,"Error Occurred",Toast.LENGTH_SHORT).show();
+      public void onErrorResponse(VolleyError error) {
+        // Handle the
+        Log.e("","response from volley" +error);
       }
-    });
-  }
-
-  public void BCBAPI(){
-    try {
-      Methods methods = BCBClient.getRetrofitInstance().create(Methods.class);
-
-      BCB modal = new BCB("79ba51a68a0ff578","android","123456","1.0");
-
-      Call<BCB> call = methods.verifyMetadata(modal);
-
-      call.enqueue(new Callback<BCB>() {
-        @Override
-        public void onResponse(Call<BCB> call, Response<BCB> response) {
-          if(response.isSuccessful()){
-            Toast.makeText(MainApplication.this, "Data updated to API", Toast.LENGTH_SHORT).show();
-            BCB responseFromAPI = response.body();
-            Log.d("","Response from bcb api" + response.toString());
-            Log.d("","Response from bcb api" + responseFromAPI);
-            Log.d("","Response from bcb api" + responseFromAPI.getResponse());
-          }
-        }
-
-        @Override
-        public void onFailure(Call<BCB> call, Throwable t) {
-          Toast.makeText(MainApplication.this,"Error Occurred",Toast.LENGTH_SHORT).show();
-        }
-      });
-    }
-    catch (Exception e){
-      Log.d("","catch block" +e);
-    }
+    }) {
+      // Override getHeaders() to set the Content-Type header
+      @Override
+      public Map<String, String> getHeaders() throws AuthFailureError {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        return headers;
+      }
+    };
+    // Add the request to the RequestQueue
+    queue = Volley.newRequestQueue(this);
+    queue.add(request);
   }
 
   public boolean CheckMalwareApps() throws JSONException {
@@ -222,8 +209,8 @@ public class MainApplication extends Application implements ReactApplication {
     boolean val = false;
     for(int i=0;i<response_data.length();i++){
       JSONObject data = response_data.getJSONObject(i);
-      String appname = data.getString("name");
-      String packageName = data.getString("pname");
+      String appname = data.getString("appName");
+      String packageName = data.getString("packageName");
       val = lib.malwareApps(packageName,context,appname);
       if(val){
         return val;

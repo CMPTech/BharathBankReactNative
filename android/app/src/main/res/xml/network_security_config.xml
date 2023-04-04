@@ -13,6 +13,17 @@
   ~  *******************************************************************************/
   -->
 
+<!--<network-security-config>-->
+<!--    <base-config cleartextTrafficPermitted="true" />-->
+<!--</network-security-config>-->
+
 <network-security-config>
-    <base-config cleartextTrafficPermitted="true" />
+<base-config cleartextTrafficPermitted="true">
+    <trust-anchors>
+        <certificates src="system" />
+    </trust-anchors>
+</base-config>
+<domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">nexanew.bharatbank.com</domain>
+</domain-config>
 </network-security-config>
