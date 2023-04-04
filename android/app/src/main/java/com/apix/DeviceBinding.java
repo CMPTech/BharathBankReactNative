@@ -439,11 +439,17 @@ public class DeviceBinding extends AppCompatActivity {
 
                     else if (Resmessage.equals("Version number not macthed!")){
                         //show the view and exit the app
+                        othertext.setVisibility(View.GONE);
+                        editText.setVisibility(View.VISIBLE);
+                        editText.setText("The app version do not match. Please install the updated version");
 
                     }
 
                     else if (Resmessage.equals("App checksum not matched!")){
                         //show the view and exit the app
+                        othertext.setVisibility(View.GONE);
+                        editText.setVisibility(View.VISIBLE);
+                        editText.setText("The checksum do not match. Please download the app from playstore.");
 
                     }
 
