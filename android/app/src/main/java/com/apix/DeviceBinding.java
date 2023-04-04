@@ -8,8 +8,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -25,8 +28,10 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -66,7 +71,6 @@ public class DeviceBinding extends AppCompatActivity {
     private CountDownTimer countdownTimer;
 
     private final MySMSBroadcastReceiver mySMSBroadcastReceiver = new MySMSBroadcastReceiver();
-    private EditText editText;
     private Button button;
 
     private final int RECORD_REQUEST_CODE = 101;
@@ -75,6 +79,7 @@ public class DeviceBinding extends AppCompatActivity {
     private  String phoneNo = "";
     private String msg = "";
     private  String os = "ANDROID";
+    private TextView editText, othertext;
 
     private String details,token,signature,releaseSIg,encrypted,deviceType;
 
@@ -84,15 +89,9 @@ public class DeviceBinding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        editText = findViewById(R.id.textView1);
+        othertext = findViewById(R.id.tView);
 
-        //Run verifyMetadata first
-
-        // if the api is successfull render main activity.
-        //MainApplication.getInstance().Backtomain();
-        //if api returns false
-        //Start the device binding process (run primaryFn)
-
-        //if FindAPI returns false run
         primaryFn();
         askPermission();
         deviceType = getDeviceName();
@@ -101,13 +100,9 @@ public class DeviceBinding extends AppCompatActivity {
 
         msg = "NEXA Secure SMS for verifying your mobile No.  DON'T SHARE THIS SMS with ANYONE. " + token.substring(1);
 
-        Log.d("","details after" +msg);
-        Log.d("","deviceType after" +token);
-
-
-        generateAppSignKey();
+//        generateAppSignKey();
 //        requestSmsPermission();
-        registerSMSReceiver();
+//        registerSMSReceiver();
 
         String packageName = this.getPackageName();
         PackageManager pm = this.getPackageManager();
@@ -135,7 +130,6 @@ public class DeviceBinding extends AppCompatActivity {
         }
 
         verifyDevice();
-
         fetchToken();
     }
 
@@ -427,21 +421,23 @@ public class DeviceBinding extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject( response);
                     String Resmessage = obj.getString("message");
-                    if(Resmessage.equals("Device details not found!")){
+                    if(Resmessage.equals("Device details not found")){
                         JSONArray vmnList = obj.getJSONArray("vmnList");
                         phoneNo = vmnList.getString(0);
                         if(isSMSPermissionGranted()){
                             sendSMS( phoneNo, msg);
                         }
-                        verifyToken();
+
                     }
 
                     else if (Resmessage.equals("Device id found!")){
                         //Load the app
+                        MainApplication.getInstance().Backtomain();
                     }
 
                     else if (Resmessage.equals("Version number not macthed!")){
                         //show the view and exit the app
+
                     }
 
                 } catch (JSONException e) {
@@ -503,6 +499,7 @@ public class DeviceBinding extends AppCompatActivity {
                     obj = new JSONObject( response);
                     String verificationMsg = obj.getString("message");
                     String seed = obj.getString("seed");
+                    MainApplication.getInstance().Backtomain();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -591,29 +588,89 @@ public class DeviceBinding extends AppCompatActivity {
 
     public  boolean isSMSPermissionGranted() {
         if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(Manifest.permission.SEND_SMS)
-                    == PackageManager.PERMISSION_GRANTED) {
+            final int permission1 = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+            if (permission1 == PackageManager.PERMISSION_GRANTED) {
                 Log.v(TAG,"Permission is granted");
                 return true;
-            } else {
-
-                Log.v(TAG,"Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 0);
-//                sendSMS( phoneNo, msg);
-                return false;
             }
         }
         else { //permission is automatically granted on sdk<23 upon installation
             Log.v(TAG,"Permission is granted");
             return true;
         }
+        return false;
     }
 
-    private void sendSMS(String phoneNumber, String message)
-    {
+    @SuppressLint("SetTextI18n")
+    public void onRequestPermissionsResult(int requestCode, String permissions[] , int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        for (int i = 0; i < permissions.length; i++) {
+            switch (requestCode) {
+                case MY_REQUEST_CODE:
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        // permission i granted
+                        Log.d(LOG_TAG, "Permission Granted: " + permissions[0]);
+                    } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
+                        // permission i denied
+                        Log.d(LOG_TAG, "Permission Denied: ");
+                        othertext.setVisibility(View.GONE);
+                        editText.setVisibility(View.VISIBLE);
+                        editText.setText("The app needs SMS permission to proceed further. Please close the app, grant the SMS permission, and reopen the app. ");
+                    } else {
+                        // permission i denied and don't ask for it again
+                        othertext.setVisibility(View.GONE);
+                        editText.setVisibility(View.VISIBLE);
+                        editText.setText("The app needs SMS permission to proceed further. Please close the app, grant the SMS permission, and reopen the app. ");
+                    }
+                    break;
+                default:
+                    throw new RuntimeException("unhandled permissions request code: " + requestCode);
+            }
+        }
+    }
+
+    private void sendSMS(String phoneNumber, String message) {
         SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(phoneNumber, null, message, null, null);
-        Toast.makeText(getApplicationContext(), "SMS sent.",
-                Toast.LENGTH_LONG).show();
+
+        PendingIntent sentIntent = PendingIntent.getBroadcast(this, 0,
+                new Intent("SMS_SENT"), PendingIntent.FLAG_MUTABLE);
+
+// Register a broadcast receiver to listen for the sent intent
+        registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                switch (getResultCode()) {
+                    case Activity.RESULT_OK:
+                        // SMS was sent successfully
+                        Toast.makeText(getApplicationContext(), "SMS sent.", Toast.LENGTH_LONG).show();
+                        Log.d("","log before api call");
+                        verifyToken();
+                        Log.d("","log after api call");
+                        break;
+                    case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
+                        // Failed to send SMS
+                        Toast.makeText(getApplicationContext(), "SMS failed to send.", Toast.LENGTH_LONG).show();
+                        break;
+                    case SmsManager.RESULT_ERROR_NO_SERVICE:
+                        // No service available to send SMS
+                        break;
+                    case SmsManager.RESULT_ERROR_NULL_PDU:
+                        // Null PDU provided
+                        break;
+                    case SmsManager.RESULT_ERROR_RADIO_OFF:
+                        // Radio was turned off
+                        break;
+                }
+            }
+        }, new IntentFilter("SMS_SENT"));
+
+        smsManager.sendTextMessage(phoneNumber, null, message, sentIntent, null);
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 }

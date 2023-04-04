@@ -32,12 +32,12 @@
         "source": "com.apix.app-main-46:/layout/activity_main.xml"
     },
     {
-        "merged": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-merged_res-44:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-debug-45:/mipmap-hdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-merged_res-44:/layout_activity_main.xml.flat",
         "source": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-merged_res-44:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-debug-45:/mipmap-hdpi/ic_launcher.png"
     },
     {
         "merged": "/home/cloudmpower/.gradle/daemon/7.4/com.apix.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.png.flat",

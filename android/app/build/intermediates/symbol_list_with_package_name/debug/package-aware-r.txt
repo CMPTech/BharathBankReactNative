@@ -3047,7 +3047,6 @@ id blocking
 id bottom
 id bounce
 id buttonPanel
-id button_id
 id cancel_action
 id cancel_button
 id catalyst_redbox_title
@@ -3112,7 +3111,6 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
-id edittext_id
 id elastic
 id embed
 id end
@@ -3392,6 +3390,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id tView
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3415,7 +3414,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView1
-id text_input_edit_text1
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
