@@ -63,6 +63,7 @@ import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,21 +92,49 @@ public class DeviceBinding extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         editText = findViewById(R.id.textView1);
         othertext = findViewById(R.id.tView);
+        mainfunction();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        mainfunction();
+    }
+
+    public void mainfunction(){
         primaryFn();
+
         askPermission();
+
         deviceType = getDeviceName();
 
         token = generateToken();
-        Log.d("","token" +token.substring(1));
 
 
-        msg = "NEXA Secure SMS for verifying your mobile No.  DON'T SHARE THIS SMS with ANYONE. " + token.substring(1);
+        msg = "NEXA Secure SMS for verifying your mobile No.  DON'T SHARE THIS SMS with ANYONE. BCBApp. " + token.substring(1);
 
 //        generateAppSignKey();
 //        requestSmsPermission();
 //        registerSMSReceiver();
 
+        signature();
+
+//        getEncryptedDeviceid();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            encrypted = Base64.getEncoder().encodeToString(details.getBytes());
+        }
+
+        Log.d("","encrypted" + encrypted);
+        Log.d("","token" + token.substring(1));
+        Log.d("","device type" + deviceType);
+
+        verifyDevice();
+
+        fetchToken();
+    }
+
+    public void signature(){
         String packageName = this.getPackageName();
         PackageManager pm = this.getPackageManager();
         ApplicationInfo ai = null;
@@ -123,22 +152,15 @@ public class DeviceBinding extends AppCompatActivity {
         //verify-metadata
         Signature value1 = Checksumlib.INSTANCE.getReleasedSignature(srcDir,this);
         releaseSIg = String.valueOf(value1.hashCode());
+    }
 
+    public  void  getEncryptedDeviceid(){
         try {
             encrypted = generateHash(details);
             Log.d("","encrypted" +encrypted);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
-
-        verifyDevice();
-        fetchToken();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        askPermission();
     }
 
     public String generateToken(){
@@ -403,10 +425,10 @@ public class DeviceBinding extends AppCompatActivity {
         // Create a JSONObject to hold the request body
         JSONObject requestBody = new JSONObject();
         try {
-            requestBody.put("deviceId", encrypted);
+            requestBody.put("deviceId", details);
             requestBody.put("appChecksum", signature);
             requestBody.put("versionNo", "1.0");
-            requestBody.put("deviceOS", "ANDROID");
+            requestBody.put("osType", "ANDROID");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -426,9 +448,10 @@ public class DeviceBinding extends AppCompatActivity {
                     if(Resmessage.equals("Device details not found!")){
                         JSONArray vmnList = obj.getJSONArray("vmnList");
                         phoneNo = vmnList.getString(0);
-                        if(isSMSPermissionGranted()){
-                            sendSMS( phoneNo, msg);
-                        }
+//                        if(isSMSPermissionGranted()){
+//                            sendSMS( phoneNo, msg);
+//                        }
+                        sendSMS( phoneNo, msg);
 
                     }
 
@@ -493,7 +516,7 @@ public class DeviceBinding extends AppCompatActivity {
         try {
             requestBody.put("deviceId", encrypted);
             requestBody.put("token", token.substring(1));
-            requestBody.put("deviceOS", "ANDROID");
+            requestBody.put("osType", "ANDROID");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -574,7 +597,7 @@ public class DeviceBinding extends AppCompatActivity {
         if (model.startsWith(manufacturer)) {
             return capitalize(model);
         }
-        return capitalize(manufacturer);
+        return capitalize(manufacturer) + model;
     }
 
     private static String capitalize(String str) {
@@ -606,12 +629,15 @@ public class DeviceBinding extends AppCompatActivity {
                 Log.v(TAG,"Permission is granted");
                 return true;
             }
+            else {
+                Log.v(TAG,"Permission is revoked");
+                return true;
+            }
         }
         else { //permission is automatically granted on sdk<23 upon installation
             Log.v(TAG,"Permission is granted");
             return true;
         }
-        return false;
     }
 
     @SuppressLint("SetTextI18n")
