@@ -48,7 +48,10 @@
             <action android:name="android.media.action.IMAGE_CAPTURE" />
         </intent> <!-- Needs to be explicitly declared on Android R+ -->
         <package android:name="com.google.android.apps.maps" />
-    </queries> <!-- Required to access Google Play Licensing -->
+    </queries>
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /> <!-- Required to access Google Play Licensing -->
     <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
     <!--
          Required to keep CPU alive while downloading files

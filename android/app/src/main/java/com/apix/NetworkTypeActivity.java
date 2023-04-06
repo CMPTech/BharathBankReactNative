@@ -4,30 +4,22 @@ import static android.content.ContentValues.TAG;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 
 public class NetworkTypeActivity extends AppCompatActivity {
@@ -37,30 +29,38 @@ public class NetworkTypeActivity extends AppCompatActivity {
     String NetworkType = "";
     private TextView editText;
     private boolean allChecksPassed = false;
+    Integer defaultStatusBarColor;
+    String returnValue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         editText = (TextView) findViewById(R.id.textView1);
         this.wifiManager = (WifiManager) this.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-        locationEnabled();
+        isNetworkSecured();
     }
 
     @Override
     public void onResume(){
         super.onResume();
         Log.d("onResume", "onResume: invoke ");
-        locationEnabled();
+        isNetworkSecured();
     }
 
     protected void onStop() {
+        // It will show a message on the screen
+        // then onStop is invoked
         super.onStop();
         Log.d("onStop", "onStop: invoke ");
         if(!allChecksPassed) android.os.Process.killProcess(android.os.Process.myPid());
     }
 
+    public String isNetworkSecured(){
+        returnValue = locationEnabled();
+        return returnValue;
+    }
 
-    private void locationEnabled(){
+    private String locationEnabled(){
         LocationManager lm = (LocationManager)
                 getSystemService(Context. LOCATION_SERVICE ) ;
         boolean gps_enabled = false;
@@ -79,34 +79,19 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
 
         if(network){
-            MainApplication.getInstance().deviceBinding();
-            return;
+            return "Yes";
         }
 
-        if(gps_enabled && network_enabled){
-            askAndStartScanWifi();
+        else if(gps_enabled && network_enabled){
+            String value = doStartScanWifi(this);
+            return value;
         }
         else{
-            new AlertDialog.Builder(this )
-                    .setMessage( "Turn on your LOCATION services" )
-                    .setPositiveButton( "Settings" , new
-                            DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick (DialogInterface paramDialogInterface , int paramInt) {
-                                    startActivity( new Intent(Settings. ACTION_LOCATION_SOURCE_SETTINGS )) ;
-                                }
-                            })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
-                        }
-                    })
-                    .show() ;
         }
+        return "Yes";
     }
 
-    private void askAndStartScanWifi(){
+    private String askAndStartScanWifi(){
 //        locationEnabled();
         // With Android Level >= 23, you have to ask the user
         // for permission to Call.
@@ -123,21 +108,23 @@ public class NetworkTypeActivity extends AppCompatActivity {
                                 Manifest.permission.ACCESS_WIFI_STATE,
                                 Manifest.permission.ACCESS_NETWORK_STATE
                         }, MY_REQUEST_CODE);
-                this.doStartScanWifi(this);
-                return;
+                String value = this.doStartScanWifi(this);
+                return value;
             }
             Log.d(LOG_TAG, "Permissions Already Granted");
         }
-        this.doStartScanWifi(this);
+        String value = this.doStartScanWifi(this);
+        return value;
     }
 
-    private void doStartScanWifi(Context context){
+    private String doStartScanWifi(Context context){
         this.wifiManager.startScan();
-        this.wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        this.wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        WifiManager wifiManager = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         WifiInfo wifiInfo = wifiManager.getConnectionInfo();
         String ssid = wifiInfo.getSSID();
-        showNetworksDetails(ssid);
+        String value = showNetworksDetails(ssid);
+        return value;
     }
 
     @SuppressLint("SetTextI18n")
@@ -149,13 +136,15 @@ public class NetworkTypeActivity extends AppCompatActivity {
                     if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
                         // permission i granted
                         Log.d(LOG_TAG, "Permission Granted: " + permissions[0]);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            getWindow().setStatusBarColor(defaultStatusBarColor);
+                        }
                     } else if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) {
                         // permission i denied
-//                        Log.d(LOG_TAG, "Permission Denied: ");
-                        editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
+                        Log.d(LOG_TAG, "Permission Denied: ");
+                        returnValue = "Permission Denied";
                     } else {
                         // permission i denied and don't ask for it again
-                        editText.setText("The app needs location permission to proceed further. Please close the app, grant the location permission, and reopen the app. ");
                     }
                     break;
                 default:
@@ -164,7 +153,7 @@ public class NetworkTypeActivity extends AppCompatActivity {
         }
     }
 
-    private void showNetworksDetails(String value){
+    private String showNetworksDetails(String value){
         String value1 =value.replace("\"","");
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -184,25 +173,15 @@ public class NetworkTypeActivity extends AppCompatActivity {
                 NetworkType = list.get(i).capabilities;
                 if(NetworkType.contains("WPA2") || NetworkType.contains("WPA")){
                     allChecksPassed = true;
-//                    MainApplication.getInstance().Backtomain();
-                    MainApplication.getInstance().deviceBinding();
-                    return;
+                    MainApplication.getInstance().Backtomain();
+                    return "Yes";
                 }else{
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setMessage("Open Network detected. For Security reasons the app will not proceed.");
-                    builder.setTitle("Alert !");
-                    builder.setCancelable(false);
-                    builder.setPositiveButton("OK", (DialogInterface.OnClickListener) (dialog, which) -> {
-                        finish();
-                        android.os.Process.killProcess(android.os.Process.myPid());
 
-                    });
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                    return;
+                    return "No";
                 }
             }
         }
+        return value1;
     }
 
     private boolean checkMobileDataIsEnabled(Context context){

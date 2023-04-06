@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/netinfo
 import com.reactnativecommunity.netinfo.NetInfoPackage;
+// react-native-android-wifi
+import com.devstepbcn.wifi.AndroidWifiPackage;
 // react-native-contacts
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 // react-native-device-info
@@ -33,6 +35,8 @@ import com.BV.LinearGradient.LinearGradientPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 // react-native-network-info
 import com.pusherman.networkinfo.RNNetworkInfoPackage;
+// react-native-permissions
+import com.zoontek.rnpermissions.RNPermissionsPackage;
 // react-native-reanimated
 import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
@@ -53,6 +57,8 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.rumax.reactnative.pdfviewer.PDFViewPackage;
 // react-native-view-shot
 import fr.greweb.reactnativeviewshot.RNViewShotPackage;
+// react-native-wifi-reborn
+import com.reactlibrary.rnwifi.RNWifiPackage;
 // rn-fetch-blob
 import com.RNFetchBlob.RNFetchBlobPackage;
 
@@ -102,6 +108,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new NetInfoPackage(),
+      new AndroidWifiPackage(),
       new ReactNativeContacts(),
       new RNDeviceInfo(),
       new RNFSPackage(),
@@ -111,6 +118,7 @@ public class PackageList {
       new LinearGradientPackage(),
       new MapsPackage(),
       new RNNetworkInfoPackage(),
+      new RNPermissionsPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
@@ -121,6 +129,7 @@ public class PackageList {
       new VectorIconsPackage(),
       new PDFViewPackage(),
       new RNViewShotPackage(),
+      new RNWifiPackage(),
       new RNFetchBlobPackage()
     ));
   }

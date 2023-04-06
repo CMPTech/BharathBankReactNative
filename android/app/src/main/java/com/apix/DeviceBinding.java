@@ -438,6 +438,7 @@ public class DeviceBinding extends AppCompatActivity {
 
 // Create a new StringRequest object
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(String response) {
                 // Handle the response
@@ -460,7 +461,7 @@ public class DeviceBinding extends AppCompatActivity {
                         MainApplication.getInstance().Backtomain();
                     }
 
-                    else if (Resmessage.equals("Version number not macthed!")){
+                    else if (Resmessage.equals("Version number not matched!")){
                         //show the view and exit the app
                         othertext.setVisibility(View.GONE);
                         editText.setVisibility(View.VISIBLE);
