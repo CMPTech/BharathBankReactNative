@@ -8,7 +8,7 @@ import {
   ImageBackground,
   Platform,
   Animated,
-  Alert, BackHandler
+  Alert, BackHandler, ToastAndroid
 } from "react-native";
 import { fontName, fontPixel, FONTS, fontSize, pixelSizeVertical, SIZES } from "../../../styles/global.config";
 import LinearGradient from 'react-native-linear-gradient';
@@ -32,6 +32,17 @@ import { LoaderComponent } from "../../components";
 import { Overlay } from 'react-native-elements';
 import StyleTextView from '../../components/input/StyleTextView';
 import { useIsFocused } from "@react-navigation/native";
+
+import { NativeModules } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import NetInfo from '@react-native-community/netinfo';
+import { PermissionsAndroid } from 'react-native';
+// import WifiManager from 'react-native-wifi-reborn';
+import WifiManager from "react-native-wifi-reborn";
+
+
+
+
 export default function GetStartedScreen({ navigation, route }) {
   const { t, i18n } = useTranslation();
   const { theme, changeTheme } = useContext(AppContext)
@@ -86,9 +97,14 @@ export default function GetStartedScreen({ navigation, route }) {
   };
 
 
+  
+
 
 
   useEffect(() => {
+    ran()
+    requestLocationPermission()
+    
     if (isFocused) {
       getMetaData()
       const backAction = () => {
@@ -105,6 +121,106 @@ export default function GetStartedScreen({ navigation, route }) {
     }
 
   }, [isFocused]);
+
+  const ran = async () => {
+    console.log("ran func invoke ");
+    const MyModule = await NativeModules.MyModule;
+    console.log("MyModule ", MyModule);
+
+    await MyModule.myMethod('Raghu', 2, (result) => {
+      console.log("MyModule.myMethod  invoke ");
+      console.log("res", result);
+    });
+
+
+    const myString = await AsyncStorage.getItem('RandomKeyForReactNative');
+    console.log("myString",myString); // outputs "Hello from Android!"
+    setRandomKey(myString)
+    
+  }
+
+
+  const showToast = (error) => {
+    ToastAndroid.show(error, ToastAndroid.LONG);
+  };
+
+  async function requestLocationPermission() {
+    if (Platform.OS === 'android') {
+      try {
+        const granted = await PermissionsAndroid.request(
+          PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+          {
+            title: 'Location Permission',
+            message: 'This app needs access to your location.',
+            buttonNeutral: 'Ask Me Later',
+            buttonNegative: 'Cancel',
+            buttonPositive: 'OK',
+          },
+        );
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          console.log('Location permission granted');
+          getWifiData()
+        } else {
+          console.log('Location permission denied');
+        }
+      } catch (err) {
+        console.log("error in location fn" +err);
+      }
+    } else {
+      // For iOS, location permission is granted by default and cannot be requested
+      console.log('Location permission granted');
+    }
+  }
+
+  const getWifiData = async () => {
+    console.log("requestLocationPermission invoke");
+    try{
+      WifiManager.getCurrentWifiSSID()
+      .then(ssid => {
+        console.log('Your current connected wifi SSID is  ' + ssid);
+        getWifiList(ssid);
+      })
+      .catch(err => {
+        showToast(JSON.stringify("SSID "+err.message));
+        console.log('Cannot get current SSID!' + err);
+      });
+    }catch(err){
+      console.log("error in getwifi" +err);
+    }
+  };
+  
+  const getWifiList = (ssid) => {
+    WifiManager.loadWifiList()
+      .then(ssidList => {
+        console.log('Your current list wifi SSID is ' + JSON.stringify(ssidList));
+        const obj = ssidList.find(item => item.SSID === ssid);
+        console.log("obj " +JSON.stringify(obj));
+        console.log("network obj" +obj.SSID);
+        console.log("network obj" +obj.capabilities);
+        let security = obj.capabilities;
+        if(obj !== null  || obj !== undefined){
+          if(security !== null || security !== undefined){
+            if(security.includes("WPA2") || security.includes("WPA")){
+              showToast("It is a secured network");
+            }
+            else{
+              showToast("It is not a secured network");
+            }
+          }
+          else showToast("Security type undefined");
+        }
+        else showToast("Wifi details not available");
+        
+      })
+      .catch(err => {
+        showToast(JSON.stringify("SSID "+err.message));
+        console.log('Cannot get List SSID !' + err);
+      });
+  }
+
+
+
+  
 
 
   const confirmAlertUI = () => {
